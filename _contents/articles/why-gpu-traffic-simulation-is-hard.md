@@ -25,11 +25,11 @@ A common first idea is simple:
 > Each vehicle is independent → assign one GPU thread per vehicle.
 
 Conceptually the model becomes:
-Vehicle 1 → Thread 1
-Vehicle 2 → Thread 2
-Vehicle 3 → Thread 3
-...
-Vehicle N → Thread N
+> Vehicle 1 → Thread 1
+> Vehicle 2 → Thread 2
+> Vehicle 3 → Thread 3
+> ...
+> Vehicle N → Thread N
 
 
 At first glance this looks ideal for GPU execution.
@@ -53,7 +53,7 @@ These interactions create strong dependencies between simulation entities.
 Traffic models often depend on **local interactions**.
 
 For example:
-Vehicle B speed ← Vehicle A position
+> Vehicle B speed ← Vehicle A position
 
 
 If Vehicle A slows down, Vehicle B must react immediately.
@@ -78,11 +78,11 @@ GPUs perform best when memory access patterns are predictable and aligned.
 Traffic simulations typically operate on **graph structures** representing road networks.
 
 For example:
-road segment
-↓
-lane
-↓
-vehicle list
+> road segment
+> ↓
+> lane
+> ↓
+> vehicle list
 
 
 Access patterns may involve:
@@ -104,8 +104,8 @@ The result is reduced memory throughput and lower overall performance.
 In traffic simulation, not all roads are equally busy.
 
 For example:
-Highway segment → 200 vehicles
-Residential road → 5 vehicles
+> Highway segment → 200 vehicles
+> Residential road → 5 vehicles
 
 
 If each road segment is assigned equal computational resources, most threads remain idle.
@@ -127,11 +127,12 @@ Example rules:
 - yield at intersections
 
 This leads to code like:
+```
 if (light == RED)
-stop();
+    stop();    
 else
-continue();
-
+    continue();
+```
 
 On GPUs, threads execute in groups called **warps**.
 

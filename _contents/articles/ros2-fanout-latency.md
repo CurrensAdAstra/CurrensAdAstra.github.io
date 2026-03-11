@@ -18,11 +18,11 @@ In this article I discuss a phenomenon commonly observed in experiments: **fan-o
 # The Fan-Out Communication Model
 
 In ROS 2, a typical communication pattern looks like this:
-Publisher → DDS → Subscriber 1
-Subscriber 2
-Subscriber 3
-...
-Subscriber N
+> Publisher → DDS → Subscriber 1
+> Subscriber 2
+> Subscriber 3
+> ...
+> Subscriber N
 
 
 One publisher produces a message that must be delivered to many subscribers.  
