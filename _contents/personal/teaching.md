@@ -91,7 +91,7 @@ In addition, I served as a **teaching assistant and research assistant at Konkuk
 
 Beyond university teaching, I have also participated in community education programs.
 
-At **Saegamama Childcare Center**, I teach practical digital skills such as:
+At **Saegammaeul Childcare Center**, I teach practical digital skills such as:
 
 - Video editing using modern editing software
 - Basic spreadsheet and data management skills

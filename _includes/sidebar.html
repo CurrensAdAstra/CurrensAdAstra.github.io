@@ -7,7 +7,7 @@
     {% if page.url == "/" %}
     <!-- HOME VIEW: List all files grouped by category -->
     <div class="file-list">
-        {% assign categories = "documents,articles,app,personal" | split: "," %}
+        {% assign categories = "notes,articles,app,personal" | split: "," %}
         {% for cat in categories %}
         <div class="sidebar-header sidebar-header-group">
             {{ cat | upcase }}

@@ -1,16 +1,16 @@
 ---
-title: "Why Static Sites?"
-category: "articles"
+title: "Project Documentation"
+category: "notes"
 ---
 
-# Why Static Sites?
+# Project Documentation
 
-Static sites are fast, secure, and easy to host.
-
-## Benefits
-1. Performance
-2. Security
-3. Cost
+This is a sample documentation file.
+1111
+## Features
+- VS Code Style
+- Jekyll Based
+- Dynamic Sidebar
 
 
 ## Dummy Data

@@ -1,12 +1,12 @@
 ---
 title: "Project Documentation"
-category: "documents"
+category: "notes"
 ---
 
 # Project Documentation
 
 This is a sample documentation file.
-1111
+
 ## Features
 - VS Code Style
 - Jekyll Based
