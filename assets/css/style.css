@@ -179,6 +179,14 @@ body {
   overflow: hidden;
 }
 
+.content-panel {
+  order: 1;
+}
+
+.toc-panel {
+  order: 2;
+}
+
 /* .panel-column and .panel-header styles below */
 
 
@@ -207,7 +215,7 @@ body {
 
 .toc-panel {
   width: 200px;
-  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   padding: 10px 20px;
   overflow-y: auto;
   font-size: 0.9em;
