@@ -9,13 +9,13 @@
     <div class="file-list">
         {% assign categories = "documents,articles,app,personal" | split: "," %}
         {% for cat in categories %}
-        <div class="sidebar-header" style="font-size: 0.8em; margin-top: 10px; color: var(--accent-color);">
+        <div class="sidebar-header sidebar-header-group">
             {{ cat | upcase }}
         </div>
         {% for item in site.contents %}
         {% if item.category == cat %}
-        <a href="{{ site.baseurl }}{{ item.url }}" class="file-item">
-            <span style="margin-right: 5px;">📄</span> {{ item.title }}
+        <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
+            <span class="file-item-icon">📄</span> {{ item.title }}
         </a>
         {% endif %}
         {% endfor %}
@@ -24,7 +24,7 @@
 
     {% else %}
     <!-- CONTEXT SPECIFIC VIEW -->
-    <div class="sidebar-header" style="font-size: 0.8em; margin-top: 10px;">
+    <div class="sidebar-header sidebar-header-group sidebar-header-context">
         {{ category | upcase }}
     </div>
 
@@ -32,7 +32,7 @@
         {% for item in site.contents %}
         {% if item.url contains category %}
         <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
-            <span style="margin-right: 5px;">📄</span> {{ item.title }}
+            <span class="file-item-icon">📄</span> {{ item.title }}
         </a>
         {% endif %}
         {% endfor %}
