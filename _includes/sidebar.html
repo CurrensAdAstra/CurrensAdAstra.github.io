@@ -12,12 +12,11 @@
         <div class="sidebar-header sidebar-header-group">
             {{ cat | upcase }}
         </div>
-        {% for item in site.contents %}
-        {% if item.category == cat %}
+        {% assign category_items = site.contents | where: "category", cat %}
+        {% for item in category_items limit: 5 %}
         <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
             <span class="file-item-icon">📄</span> {{ item.title }}
         </a>
-        {% endif %}
         {% endfor %}
         {% endfor %}
     </div>
@@ -29,12 +28,11 @@
     </div>
 
     <div class="file-list">
-        {% for item in site.contents %}
-        {% if item.url contains category %}
+        {% assign context_items = site.contents | where: "category", category %}
+        {% for item in context_items limit: 5 %}
         <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
             <span class="file-item-icon">📄</span> {{ item.title }}
         </a>
-        {% endif %}
         {% endfor %}
     </div>
     {% endif %}
