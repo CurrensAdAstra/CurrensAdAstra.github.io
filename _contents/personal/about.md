@@ -15,7 +15,7 @@ In addition to engineering and research work, I teach programming, operating sys
 
 ---
 
-## Research Interests
+# Research Interests
 
 - Embedded and real-time systems  
 - Linux kernel debugging and device driver development  
@@ -25,13 +25,13 @@ In addition to engineering and research work, I teach programming, operating sys
 
 ---
 
-## Current Work
+# Current Work
 
 My current work explores how **embedded platforms, robotics systems, and simulation environments can be connected into coherent system architectures**. I am particularly interested in the behavior of complex hardware–software stacks where timing, reliability, and observability become critical engineering concerns.
 
 ---
 
-## Engineering Philosophy
+# Engineering Philosophy
 
 I believe strong engineering begins with **clear system boundaries and measurable behavior**.
 

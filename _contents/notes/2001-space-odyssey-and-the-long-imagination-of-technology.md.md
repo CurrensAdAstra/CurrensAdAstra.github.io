@@ -30,7 +30,7 @@ https://www.khan.co.kr/article/201108241707121
 
 ---
 
-# The Curious Case of Glass Circuit Boards
+## The Curious Case of Glass Circuit Boards
 
 But perhaps the most interesting example of technological imagination in the film is not a major device, but a small design detail.
 
@@ -47,7 +47,7 @@ https://youtu.be/5T_N4w2C20M?si=EerkaPeNNvQFNg3s
 
 ---
 
-# The 1960s: The Great Era of Computing Imagination
+## The 1960s: The Great Era of Computing Imagination
 
 Looking back, many of the conceptual foundations of modern computing appeared during the 1960s.
 
@@ -65,7 +65,7 @@ It helped draw the conceptual map of what the future might look like.
 
 ---
 
-# HAL 9000
+## HAL 9000
 
 The film also left us with one of the most memorable moments in science fiction.
 

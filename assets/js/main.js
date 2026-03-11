@@ -76,6 +76,75 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function getYouTubeVideoId(url) {
+    try {
+      const parsed = new URL(url);
+      const host = parsed.hostname.replace('www.', '');
+
+      if (host === 'youtu.be') {
+        return parsed.pathname.split('/').filter(Boolean)[0] || null;
+      }
+
+      if (host === 'youtube.com' || host === 'm.youtube.com') {
+        if (parsed.pathname === '/watch') {
+          return parsed.searchParams.get('v');
+        }
+
+        if (parsed.pathname.startsWith('/shorts/')) {
+          return parsed.pathname.split('/')[2] || null;
+        }
+
+        if (parsed.pathname.startsWith('/embed/')) {
+          return parsed.pathname.split('/')[2] || null;
+        }
+      }
+    } catch (error) {
+      return null;
+    }
+
+    return null;
+  }
+
+  function embedYouTubeLinks(root) {
+    const links = root.querySelectorAll('a[href]');
+
+    links.forEach(function (link) {
+      if (link.closest('.youtube-embed')) {
+        return;
+      }
+
+      const href = link.getAttribute('href');
+      if (!href) {
+        return;
+      }
+
+      const videoId = getYouTubeVideoId(href);
+      if (!videoId) {
+        return;
+      }
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'youtube-embed';
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + videoId;
+      iframe.title = 'YouTube video player';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+
+      wrapper.appendChild(iframe);
+
+      const paragraph = link.closest('p');
+      if (paragraph && paragraph.textContent && paragraph.textContent.trim() === link.textContent.trim()) {
+        paragraph.replaceWith(wrapper);
+        return;
+      }
+
+      link.replaceWith(wrapper);
+    });
+  }
+
   // 모바일 메뉴 토글
   if (menuToggleButton && sidebarContainer) {
     menuToggleButton.addEventListener('click', function () {
@@ -92,11 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // 본문 내 일반 텍스트 URL(http/https)을 자동 링크로 변환
   linkifyTextUrls(content);
 
-  const headers = content.querySelectorAll('h2, h3');
-  const ul = document.createElement('ul');
+  // YouTube 링크를 재생 가능한 임베드 박스로 변환
+  embedYouTubeLinks(content);
 
-  let lastH2Li = null;
-  let subUl = null;
+  const headers = content.querySelectorAll('h1, h2');
+  const ul = document.createElement('ul');
 
   headers.forEach(function (header) {
     if (!header.id) {
@@ -109,25 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
     a.textContent = header.textContent;
     li.appendChild(a);
 
-    if (header.tagName.toLowerCase() === 'h2') {
-      ul.appendChild(li);
-      lastH2Li = li;
-      subUl = null;
-      return;
-    }
-
-    // h3
-    if (lastH2Li) {
-      if (!subUl) {
-        subUl = document.createElement('ul');
-        subUl.classList.add('toc-sub-list');
-        lastH2Li.appendChild(subUl);
-      }
-      subUl.appendChild(li);
-      return;
-    }
-
-    // 선행 h2가 없는 h3는 최상위로 처리
     ul.appendChild(li);
   });
 
