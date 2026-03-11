@@ -179,14 +179,6 @@ body {
   overflow: hidden;
 }
 
-.content-panel {
-  order: 1;
-}
-
-.toc-panel {
-  order: 2;
-}
-
 /* .panel-column and .panel-header styles below */
 
 
