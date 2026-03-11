@@ -12,7 +12,7 @@ My courses therefore focus on **hands-on system development, debugging, and perf
 
 ---
 
-# Teaching Philosophy
+## Teaching Philosophy
 
 I believe engineering education should cultivate **system-level thinking**.
 
@@ -27,7 +27,7 @@ Rather than focusing solely on theoretical explanation, I encourage students to 
 
 ---
 
-# Teaching Areas
+## Teaching Areas
 
 My teaching covers several areas within computer engineering and systems software:
 
@@ -51,7 +51,7 @@ My teaching covers several areas within computer engineering and systems softwar
 
 ---
 
-# Teaching Approach
+## Teaching Approach
 
 My courses typically follow a progression from **concepts → implementation → system analysis**.
 
@@ -69,7 +69,7 @@ This approach allows students to develop both **conceptual understanding and eng
 
 ---
 
-# Teaching Experience
+## Teaching Experience
 
 I have taught courses at several universities in Korea.
 

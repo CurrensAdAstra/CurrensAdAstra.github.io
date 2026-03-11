@@ -4,6 +4,78 @@ document.addEventListener('DOMContentLoaded', function () {
   const sidebarContainer = document.getElementById('sidebar-container');
   const menuToggleButton = document.querySelector('.menu-toggle');
 
+  function linkifyTextUrls(root) {
+    const urlRegex = /https?:\/\/[^\s<>"'`]+/g;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (!node.nodeValue || !node.nodeValue.match(urlRegex)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        const parent = node.parentElement;
+        if (!parent) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        if (parent.closest('a, code, pre, script, style, textarea')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    const textNodes = [];
+    let currentNode = walker.nextNode();
+    while (currentNode) {
+      textNodes.push(currentNode);
+      currentNode = walker.nextNode();
+    }
+
+    textNodes.forEach(function (textNode) {
+      const text = textNode.nodeValue;
+      const fragment = document.createDocumentFragment();
+      let lastIndex = 0;
+      let match;
+
+      while ((match = urlRegex.exec(text)) !== null) {
+        const rawUrl = match[0];
+        const start = match.index;
+        let end = start + rawUrl.length;
+        let cleanUrl = rawUrl;
+
+        while (/[),.!?;:]$/.test(cleanUrl)) {
+          cleanUrl = cleanUrl.slice(0, -1);
+          end -= 1;
+        }
+
+        if (start > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+        }
+
+        const link = document.createElement('a');
+        link.href = cleanUrl;
+        link.textContent = cleanUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        fragment.appendChild(link);
+
+        if (end < start + rawUrl.length) {
+          fragment.appendChild(document.createTextNode(text.slice(end, start + rawUrl.length)));
+        }
+
+        lastIndex = start + rawUrl.length;
+      }
+
+      if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+
+      textNode.parentNode.replaceChild(fragment, textNode);
+      urlRegex.lastIndex = 0;
+    });
+  }
+
   // 모바일 메뉴 토글
   if (menuToggleButton && sidebarContainer) {
     menuToggleButton.addEventListener('click', function () {
@@ -16,6 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!content || !toc) {
     return;
   }
+
+  // 본문 내 일반 텍스트 URL(http/https)을 자동 링크로 변환
+  linkifyTextUrls(content);
 
   const headers = content.querySelectorAll('h2, h3');
   const ul = document.createElement('ul');

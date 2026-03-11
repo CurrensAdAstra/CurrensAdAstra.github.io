@@ -12,9 +12,9 @@ My work connects **academic system modeling with production-grade embedded platf
 
 ---
 
-# Research Areas
+## Research Areas
 
-## Embedded and Real-Time Systems
+### Embedded and Real-Time Systems
 
 My work in embedded systems focuses on reliability, system architecture, and performance behavior in Linux-based platforms.
 
@@ -29,7 +29,7 @@ This work is motivated by the challenges of deploying embedded systems that must
 
 ---
 
-## Robotics Middleware and UAV Systems
+### Robotics Middleware and UAV Systems
 
 Another major research direction involves robotics middleware and UAV platforms.
 
@@ -46,7 +46,7 @@ These systems require careful coordination between software architecture, hardwa
 
 ---
 
-## GPU-Accelerated Simulation and Performance Modeling
+### GPU-Accelerated Simulation and Performance Modeling
 
 My doctoral research focused on improving the scalability of large-scale traffic simulations.
 
@@ -61,7 +61,7 @@ This work aims to understand how parallel computing platforms can support comple
 
 ---
 
-# Research Approach
+## Research Approach
 
 My research combines **system design, empirical experimentation, and performance analysis**.
 
@@ -76,7 +76,7 @@ This approach allows research ideas to be validated under realistic operating co
 
 ---
 
-# Current Directions
+## Current Directions
 
 My current work explores the behavior of **complex hardware–software stacks** where embedded devices, robotics systems, and large-scale computation interact.
 
@@ -89,7 +89,7 @@ Current interests include:
 
 ---
 
-# Research Philosophy
+## Research Philosophy
 
 I believe good systems research should remain closely connected to real systems.
 
