@@ -3,59 +3,39 @@ title: "About Me"
 category: "personal"
 ---
 
-# Persona
+# About
 
-This section contains formal professional materials and academic documents prepared for evaluation and reference.
+I am **MinGi Kyung**, an embedded systems engineer and researcher working at the intersection of **hardware platforms, operating systems, and large-scale simulation systems**.
 
-## Professional Documents
+My work focuses on designing and analyzing systems where real-world devices interact with complex software environments. I have experience developing and debugging **Linux-based embedded platforms**, building **robotics control systems using ROS2**, implementing **STM32 embedded firmware**, and researching **GPU-accelerated traffic simulation models**.
 
-### Curriculum Vitae
-Comprehensive academic and professional curriculum vitae detailing:
+I earned a **Ph.D. in Computer Engineering** from Konkuk University, where my research explored performance prediction for GPU-based traffic simulation. My broader research interests lie in understanding how system architecture, scheduling behavior, and hardware constraints influence the reliability and performance of real-world computing systems.
 
-- Educational background and qualifications
-- Research experience and publications
-- Teaching experience and community outreach
-- Technical expertise and skills
-- Professional certifications and achievements
+In addition to engineering and research work, I teach programming, operating systems, and embedded development with an emphasis on **system-level thinking and practical experimentation**.
 
-👉 **[Download CV - English](/assets/resume/MinGiKyung_eng_CV.pdf)**
-👉 **[Download CV - Korean](/assets/resume/MinGiKyung_kor_CV.pdf)**
-### Research Statement
-Detailed overview of research interests, methodology, and future directions:
+---
 
-- Embedded and real-time systems
-- Robotics middleware and UAV systems
-- GPU-accelerated simulation
-- System reliability and performance optimization
+## Research Interests
 
-### Teaching Statement
-Teaching philosophy, experience, and approach to technical education:
+- Embedded and real-time systems  
+- Linux kernel debugging and device driver development  
+- Robotics middleware and UAV systems (ROS2)  
+- GPU-accelerated simulation and performance modeling  
+- Distributed systems and system observability  
 
-- Hands-on learning methodologies
-- Industry-relevant curriculum development
-- Student assessment and feedback approaches
-- Community education initiatives
+---
 
-### Portfolio
-Selected research and engineering projects with detailed case studies:
+## Current Work
 
-- Historical GIS mapping and spatial analysis
-- Embedded Linux system development
-- ROS 2-based UAV control systems
-- GPU-accelerated traffic simulation
-- AUTOSAR conformance testing platforms
+My current work explores how **embedded platforms, robotics systems, and simulation environments can be connected into coherent system architectures**. I am particularly interested in the behavior of complex hardware–software stacks where timing, reliability, and observability become critical engineering concerns.
 
-👉 **[Download Portfolio - English](/assets/resume/MinGiKyung_eng_Portfolio.pdf)**
-👉 **[Download Portfolio - Korean](/assets/resume/MinGiKyung_kor_Portfolio.pdf)**
+---
 
-## Document Philosophy
+## Engineering Philosophy
 
-These formal materials represent:
+I believe strong engineering begins with **clear system boundaries and measurable behavior**.
 
-- **Authenticity**: Accurate representation of qualifications and experience
-- **Transparency**: Clear documentation of capabilities and achievements
-- **Professionalism**: Standards-appropriate presentation and formatting
-- **Accessibility**: Multiple formats for different evaluation contexts
+Rather than optimizing prematurely, I prefer to start with simple, testable designs and refine them using empirical data. Whether working on embedded platforms, robotics systems, or research prototypes, my goal is to build systems that remain **understandable, maintainable, and trustworthy over long periods of time**.
 
 ---
 
