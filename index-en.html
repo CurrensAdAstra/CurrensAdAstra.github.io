@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Home
-permalink: /
-lang: en
+title: 홈
+permalink: /ko/
+lang: ko
 translation_key: home
 ---
 
@@ -21,11 +21,11 @@ translation_key: home
 {% assign triptych_page = localized_contents | where: "translation_key", "ide-style-three-panel-theme" | first %}
 {% assign ros2_page = localized_contents | where: "translation_key", "ros2-fanout-latency" | first %}
 
-<h1>Welcome</h1>
+<h1>환영합니다</h1>
 
-<p>This site uses a VS Code-style navigation UI so you can browse documents and portfolio content efficiently.</p>
+<p>이 사이트는 VS Code 스타일 내비게이션 UI를 사용해 문서와 포트폴리오 콘텐츠를 효율적으로 탐색할 수 있도록 설계되었습니다.</p>
 
-<h2>Quick Links</h2>
+<h2>바로가기</h2>
 
 <ul class="home-links">
   {% if about_page %}<li><a href="{{ site.baseurl }}{{ about_page.url }}">About</a></li>{% endif %}
@@ -34,7 +34,7 @@ translation_key: home
   {% if research_page %}<li><a href="{{ site.baseurl }}{{ research_page.url }}">Research</a></li>{% endif %}
 </ul>
 
-<h2>Recent Documents</h2>
+<h2>최근 문서</h2>
 
 <ul class="home-links">
   {% if quickpeek_page %}<li><a href="{{ site.baseurl }}{{ quickpeek_page.url }}">QuickPeek</a></li>{% endif %}

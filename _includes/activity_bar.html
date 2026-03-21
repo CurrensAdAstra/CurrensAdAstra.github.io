@@ -1,13 +1,23 @@
 <div class="activity-bar">
 
-  {% assign doc_item = site.contents | where: "category", "notes" | first %}
-  {% assign art_item = site.contents | where: "category", "articles" | first %}
+  {% assign current_lang = include.current_lang | default: site.i18n.default_lang | default: "ko" %}
+  {% assign labels = include.labels | default: site.i18n.labels[current_lang] %}
+  {% assign localized_contents = site.contents | where: "lang", current_lang %}
+  {% if localized_contents == empty %}
+  {% assign localized_contents = site.contents %}
+  {% endif %}
+  {% assign home_candidates = site.pages | where: "translation_key", "home" %}
+  {% assign localized_home = home_candidates | where: "lang", current_lang | first %}
+  {% assign home_url = localized_home.url | default: "/" %}
 
-  {% assign app_item = site.contents | where: "category", "app" | first %}
-  {% assign pers_item = site.contents | where: "category", "personal" | first %}
+  {% assign doc_item = localized_contents | where: "category", "notes" | first %}
+  {% assign art_item = localized_contents | where: "category", "articles" | first %}
+
+  {% assign app_item = localized_contents | where: "category", "app" | first %}
+  {% assign pers_item = localized_contents | where: "category", "personal" | first %}
 
   <!-- Home Icon -->
-  <a href="{{ site.baseurl }}/" class="activity-bar-item {% if page.url == '/' %}active{% endif %}" title="Home">
+  <a href="{{ site.baseurl }}{{ home_url }}" class="activity-bar-item {% if page.translation_key == 'home' or page.url == '/' %}active{% endif %}" title="{{ labels.home }}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -17,7 +27,7 @@
 
   <!-- Files Icon (Notes) -->
   <a href="{{ site.baseurl }}{{ doc_item.url }}"
-    class="activity-bar-item {% if page.url contains '/notes/' %}active{% endif %}" title="Notes">
+    class="activity-bar-item {% if page.url contains '/notes/' %}active{% endif %}" title="{{ labels.notes }}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -29,7 +39,7 @@
   </a>
   <!-- Social Icon -->
   <a href="{{ site.baseurl }}{{ art_item.url }}"
-    class="activity-bar-item {% if page.url contains '/articles/' %}active{% endif %}" title="Articles">
+    class="activity-bar-item {% if page.url contains '/articles/' %}active{% endif %}" title="{{ labels.articles }}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -40,7 +50,7 @@
   </a>
   <!-- App/Plugin Icon -->
   <a href="{{ site.baseurl }}{{ app_item.url }}"
-    class="activity-bar-item {% if page.url contains '/app/' %}active{% endif %}" title="Apps">
+    class="activity-bar-item {% if page.url contains '/app/' %}active{% endif %}" title="{{ labels.app }}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -49,7 +59,7 @@
   </a>
   <!-- Person Icon -->
   <a href="{{ site.baseurl }}{{ pers_item.url }}"
-    class="activity-bar-item {% if page.url contains '/personal/' %}active{% endif %}" title="Personal">
+    class="activity-bar-item {% if page.url contains '/personal/' %}active{% endif %}" title="{{ labels.personal }}">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>

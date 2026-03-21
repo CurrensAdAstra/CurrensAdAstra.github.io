@@ -1,6 +1,8 @@
 ---
 title: "Research"
 category: "personal"
+lang: en
+translation_key: research
 ---
 
 # Research

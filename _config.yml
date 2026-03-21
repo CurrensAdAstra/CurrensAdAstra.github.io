@@ -1,7 +1,32 @@
-title: VS Code Theme Site
-description: A Jekyll site with VS Code interface styling
+title: Textus a fele scriptus est.
+description: Personal Academic/Developer Website
 baseurl: ""
 url: ""
+
+i18n:
+  default_lang: en
+  languages: [ko, en]
+  labels:
+    ko:
+      home: 홈
+      notes: 노트
+      articles: 아티클
+      app: 앱
+      personal: 개인
+      outline: 개요
+      mobile_title: VS Code 테마
+      menu_open: 사이드바 메뉴 열기
+      language: 언어
+    en:
+      home: Home
+      notes: Notes
+      articles: Articles
+      app: Apps
+      personal: Personal
+      outline: Outline
+      mobile_title: VS Code Theme
+      menu_open: Open sidebar menu
+      language: Language
 
 collections:
   contents:

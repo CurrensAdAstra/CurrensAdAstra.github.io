@@ -1,6 +1,8 @@
 ---
 title: "Curriculum Vitae"
 category: "personal"
+lang: en
+translation_key: cv
 ---
 
 # Min-Gi Kyung, Ph.D.
@@ -13,7 +15,7 @@ ORCID: 0000-0001-8071-8511
 
 ---
 
-# Research Profile
+## Research Profile
 
 Embedded systems researcher specializing in real-time platforms,
 robotics middleware, and performance-oriented system design.
@@ -24,7 +26,7 @@ modeling with production-grade software systems.
 
 ---
 
-# Research Interests
+## Research Interests
 
 - Embedded Systems and Real-Time Platforms  
 - Robotics Systems and ROS 2 Middleware  
@@ -33,9 +35,9 @@ modeling with production-grade software systems.
 
 ---
 
-# Education
+## Education
 
-## Ph.D. in Computer & Information Communication Engineering  
+### Ph.D. in Computer & Information Communication Engineering  
 **Konkuk University**, Seoul, Republic of Korea  
 2010 – 2019  
 
@@ -47,7 +49,7 @@ using real-world traffic datasets from Seoul.
 
 ---
 
-## M.S. in Computer & Information Communication Engineering  
+### M.S. in Computer & Information Communication Engineering  
 **Konkuk University**, Seoul, Republic of Korea  
 2008 – 2010  
 
@@ -59,15 +61,15 @@ tool for validating AUTOSAR-based automotive software.
 
 ---
 
-## B.S. in Computer Engineering  
+### B.S. in Computer Engineering  
 **Konkuk University**, Seoul, Republic of Korea  
 2001 – 2008  
 
 ---
 
-# Research Experience
+## Research Experience
 
-## Postdoctoral Researcher  
+### Postdoctoral Researcher  
 **Konkuk University**  
 Mar 2019 – Dec 2019  
 
@@ -78,9 +80,9 @@ Mar 2019 – Dec 2019
 
 ---
 
-# Industry Experience
+## Industry Experience
 
-## Embedded Linux Systems Engineer  
+### Embedded Linux Systems Engineer  
 **Kaon Group**  
 Nov 2023 – Mar 2025  
 
@@ -91,7 +93,7 @@ Nov 2023 – Mar 2025
 
 ---
 
-## Senior Research Engineer (Robotics Systems)  
+### Senior Research Engineer (Robotics Systems)  
 **Argosdyne Co., Ltd.**  
 Jan 2023 – Oct 2023  
 
@@ -102,7 +104,7 @@ Jan 2023 – Oct 2023
 
 ---
 
-## Research Engineer (GIS Systems)  
+### Research Engineer (GIS Systems)  
 **Wise Infotech Co., Ltd.**  
 Jul 2021 – Nov 2022  
 
@@ -111,9 +113,9 @@ Jul 2021 – Nov 2022
 
 ---
 
-# Teaching Experience
+## Teaching Experience
 
-## Lecturer
+### Lecturer
 
 **Nazareth University** (2013)  
 - Operating Systems  
@@ -127,7 +129,7 @@ Jul 2021 – Nov 2022
 
 ---
 
-## Teaching Assistant / Research Assistant  
+### Teaching Assistant / Research Assistant  
 **Konkuk University**  
 Mar 2008 – Feb 2019  
 
@@ -136,9 +138,9 @@ Mar 2008 – Feb 2019
 
 ---
 
-# Publications
+## Publications
 
-## Journal Articles
+### Journal Articles
 
 Kyung, M.G. et al.  
 **Vision-based Reduction of Gyro Drift for Intelligent Vehicles**  
@@ -146,7 +148,7 @@ Journal of Control, Robotics and Systems, 2016
 
 ---
 
-## Conference Papers
+### Conference Papers
 
 Kyung, M.G. et al.  
 **Performance Measurement in GPU-Based Traffic Simulation**  
@@ -170,7 +172,7 @@ Korean Institute of Information Scientists and Engineers Conference, 2009
 
 ---
 
-# Research Projects
+## Research Projects
 
 **Cloud-Based Traffic Simulation Project (ETRI Collaboration)**  
 2017 – 2019  
@@ -180,14 +182,14 @@ Korean Institute of Information Scientists and Engineers Conference, 2009
 
 ---
 
-# Patents
+## Patents
 
 **Method for Setting Flight Path and Aircraft**  
 2012 (Registered, Expired)
 
 ---
 
-# Technical Skills
+## Technical Skills
 
 **Programming**  
 C, Embedded C, Rust, Java  
@@ -209,7 +211,7 @@ Spring Framework, Leaflet.js
 
 ---
 
-# Certifications
+## Certifications
 
 - Engineer Information Processing  
 - Industrial Engineer Information Processing  
@@ -217,7 +219,7 @@ Spring Framework, Leaflet.js
 
 ---
 
-# Academic Service & Outreach
+## Academic Service & Outreach
 
 - University-level teaching in operating systems, networking,
   object-oriented programming, and software engineering  

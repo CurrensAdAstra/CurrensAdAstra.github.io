@@ -2,6 +2,8 @@
 title: "Understanding ROS 2 Fan-Out Latency"
 date: 2026-03-11
 category: articles
+lang: en
+translation_key: ros2-fanout-latency
 tags: [ros2, robotics, latency, distributed-systems, performance]
 ---
 
@@ -15,7 +17,7 @@ In this article I discuss a phenomenon commonly observed in experiments: **fan-o
 
 ---
 
-# The Fan-Out Communication Model
+## The Fan-Out Communication Model
 
 In ROS 2, a typical communication pattern looks like this:
 > Publisher → DDS → Subscriber 1
@@ -33,7 +35,7 @@ But as fan-out increases, the latency distribution can change significantly.
 
 ---
 
-# Why Latency Increases with Fan-Out
+## Why Latency Increases with Fan-Out
 
 There are several factors contributing to this behavior.
 
@@ -87,7 +89,7 @@ These effects are especially visible on embedded platforms with limited cores.
 
 ---
 
-# Tail Latency Effects
+## Tail Latency Effects
 
 One interesting observation is that **median latency often remains stable**, while **tail latency grows rapidly**.
 
@@ -105,7 +107,7 @@ Even if most messages are delivered quickly, the slowest messages dominate syste
 
 ---
 
-# Practical Implications
+## Practical Implications
 
 This behavior has several practical consequences for robotics systems.
 
@@ -133,7 +135,7 @@ Understanding the interaction between middleware and the OS scheduler is essenti
 
 ---
 
-# Mitigation Strategies
+## Mitigation Strategies
 
 Several approaches can reduce fan-out latency effects.
 
@@ -160,7 +162,7 @@ This approach is particularly useful on embedded platforms.
 
 ---
 
-# Conclusion
+## Conclusion
 
 ROS 2 fan-out latency illustrates a broader systems principle:
 
@@ -172,7 +174,7 @@ As robotics platforms grow more complex, performance analysis of middleware beha
 
 ---
 
-# Notes
+## Notes
 
 This article summarizes observations from ongoing experiments on ROS 2 communication latency and system-level scheduling behavior.
 

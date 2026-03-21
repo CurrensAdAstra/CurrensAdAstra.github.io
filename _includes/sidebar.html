@@ -1,18 +1,24 @@
 <div class="sidebar">
 
+    {% assign current_lang = include.current_lang | default: site.i18n.default_lang | default: "ko" %}
+    {% assign labels = include.labels | default: site.i18n.labels[current_lang] %}
+    {% assign localized_contents = site.contents | where: "lang", current_lang %}
+    {% if localized_contents == empty %}
+    {% assign localized_contents = site.contents %}
+    {% endif %}
 
     {% assign current_url = page.url | split: '/' %}
     {% assign category = current_url[2] %}
 
-    {% if page.url == "/" %}
+    {% if page.translation_key == "home" or page.url == "/" %}
     <!-- HOME VIEW: List all files grouped by category -->
     <div class="file-list">
         {% assign categories = "notes,articles,app,personal" | split: "," %}
         {% for cat in categories %}
         <div class="sidebar-header sidebar-header-group">
-            {{ cat | upcase }}
+            {{ labels[cat] | default: cat | upcase }}
         </div>
-        {% assign category_items = site.contents | where: "category", cat %}
+        {% assign category_items = localized_contents | where: "category", cat %}
         {% for item in category_items limit: 5 %}
         <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
             <span class="file-item-icon">📄</span> {{ item.title }}
@@ -24,11 +30,11 @@
     {% else %}
     <!-- CONTEXT SPECIFIC VIEW -->
     <div class="sidebar-header sidebar-header-group sidebar-header-context">
-        {{ category | upcase }}
+        {{ labels[category] | default: category | upcase }}
     </div>
 
     <div class="file-list">
-        {% assign context_items = site.contents | where: "category", category %}
+        {% assign context_items = localized_contents | where: "category", category %}
         {% for item in context_items limit: 5 %}
         <a href="{{ site.baseurl }}{{ item.url }}" class="file-item {% if item.url == page.url %}active{% endif %}">
             <span class="file-item-icon">📄</span> {{ item.title }}

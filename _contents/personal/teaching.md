@@ -1,6 +1,8 @@
 ---
 title: "Teaching"
 category: "personal"
+lang: en
+translation_key: teaching
 ---
 
 # Teaching
@@ -87,7 +89,7 @@ In addition, I served as a **teaching assistant and research assistant at Konkuk
 
 ---
 
-# Community Education
+## Community Education
 
 Beyond university teaching, I have also participated in community education programs.
 
@@ -100,7 +102,7 @@ These programs focus on **accessible technical education and digital literacy**,
 
 ---
 
-# Teaching Goals
+## Teaching Goals
 
 My long-term goal is to develop courses that combine **embedded systems, robotics software, and high-performance computing**.
 

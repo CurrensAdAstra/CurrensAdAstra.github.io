@@ -1,6 +1,8 @@
 ---
 title: "Portfolio"
 category: "personal"
+lang: en
+translation_key: portfolio
 ---
 
 # Portfolio

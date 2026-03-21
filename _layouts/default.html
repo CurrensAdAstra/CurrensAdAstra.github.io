@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+{% assign current_lang = page.lang | default: site.i18n.default_lang | default: "ko" %}
+{% assign labels = site.i18n.labels[current_lang] | default: site.i18n.labels[site.i18n.default_lang] %}
+{% assign translation_key = page.translation_key | default: page.slug | default: page.title %}
+{% if page.collection == "contents" %}
+{% assign translation_candidates = site.contents | where: "translation_key", translation_key %}
+{% else %}
+{% assign translation_candidates = site.pages | where: "translation_key", translation_key %}
+{% endif %}
+<html lang="{{ current_lang }}">
 
 <head>
     <meta charset="UTF-8">
@@ -15,23 +23,38 @@
         <button
             class="menu-toggle"
             type="button"
-            aria-label="사이드바 메뉴 열기"
+            aria-label="{{ labels.menu_open }}"
             aria-controls="sidebar-container"
             aria-expanded="false"
         >☰</button>
-        <div class="mobile-header-title">VS Code Theme</div>
+        <div class="mobile-header-title">{{ labels.mobile_title }}</div>
     </div>
 
     <div id="sidebar-container" class="sidebar-container">
-        {% include activity_bar.html %}
-        {% include sidebar.html %}
+        {% include activity_bar.html current_lang=current_lang labels=labels %}
+        {% include sidebar.html current_lang=current_lang labels=labels %}
     </div>
 
     <div class="main-area">
 
         <div class="editor-container">
             <!-- Top Header -->
-            <div class="panel-header">{{ page.title }}</div>
+            <div class="panel-header panel-header-top">
+                <div class="panel-title">{{ page.title }}</div>
+                <div class="language-switcher" aria-label="{{ labels.language }}">
+                    <span class="language-label">{{ labels.language }}:</span>
+                    {% for lang in site.i18n.languages %}
+                        {% assign translated_page = translation_candidates | where: "lang", lang | first %}
+                        {% if lang == current_lang %}
+                            <strong class="language-current">{{ lang }}</strong>
+                        {% elsif translated_page %}
+                            <a class="language-link" href="{{ site.baseurl }}{{ translated_page.url }}">{{ lang }}</a>
+                        {% else %}
+                            <span class="language-disabled">{{ lang }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
 
             <!-- Main Body: TOC | Content -->
             <div class="editor-body">
@@ -40,7 +63,7 @@
                 </div>
 
                 <div class="toc-panel" id="toc-panel">
-                    <div class="toc-title">OUTLINE</div>
+                    <div class="toc-title">{{ labels.outline }}</div>
                     <!-- TOC Content will be injected here or manually placed -->
                 </div>
             </div>

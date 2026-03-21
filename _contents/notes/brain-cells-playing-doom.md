@@ -2,6 +2,8 @@
 title: "Brain Cells Playing DOOM"
 date: 2026-03-11
 category: notes
+lang: en
+translation_key: brain-cells-playing-doom
 tags: [ai, neuroscience, doom, computing, philosophy]
 ---
 

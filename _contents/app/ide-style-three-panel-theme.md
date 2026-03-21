@@ -1,6 +1,8 @@
 ---
 title: "Triptych"
 category: "app"
+lang: en
+translation_key: ide-style-three-panel-theme
 ---
 
 # Triptych — IDE-Style Three-Panel Jekyll Theme

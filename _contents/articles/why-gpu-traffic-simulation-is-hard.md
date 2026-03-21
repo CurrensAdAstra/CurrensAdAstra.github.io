@@ -2,6 +2,8 @@
 title: "Why GPU Traffic Simulation Is Hard"
 date: 2026-03-11
 category: articles
+lang: en
+translation_key: why-gpu-traffic-simulation-is-hard
 tags: [gpu, cuda, simulation, traffic, parallel-computing]
 ---
 
@@ -18,7 +20,7 @@ In this article I discuss several reasons why implementing an efficient GPU-base
 
 ---
 
-# The Intuition: "Just Parallelize the Vehicles"
+## The Intuition: "Just Parallelize the Vehicles"
 
 A common first idea is simple:
 
@@ -48,7 +50,7 @@ These interactions create strong dependencies between simulation entities.
 
 ---
 
-# Problem 1: Data Dependency Between Vehicles
+## Problem 1: Data Dependency Between Vehicles
 
 Traffic models often depend on **local interactions**.
 
@@ -71,7 +73,7 @@ The more realistic the traffic model becomes, the more complicated these depende
 
 ---
 
-# Problem 2: Irregular Memory Access
+## Problem 2: Irregular Memory Access
 
 GPUs perform best when memory access patterns are predictable and aligned.
 
@@ -99,7 +101,7 @@ The result is reduced memory throughput and lower overall performance.
 
 ---
 
-# Problem 3: Load Imbalance
+## Problem 3: Load Imbalance
 
 In traffic simulation, not all roads are equally busy.
 
@@ -116,7 +118,7 @@ Balancing workloads across thousands of GPU threads becomes a major design chall
 
 ---
 
-# Problem 4: Branch Divergence
+## Problem 4: Branch Divergence
 
 Traffic behavior often involves conditional logic.
 
@@ -144,7 +146,7 @@ Traffic systems are inherently full of conditional behavior, which makes diverge
 
 ---
 
-# Problem 5: Synchronization Across Time Steps
+## Problem 5: Synchronization Across Time Steps
 
 Most traffic simulators operate in **discrete time steps**.
 
@@ -166,7 +168,7 @@ If synchronization is too frequent, the GPU advantage disappears.
 
 ---
 
-# A More Realistic GPU Strategy
+## A More Realistic GPU Strategy
 
 Successful GPU traffic simulators typically avoid naive vehicle-parallel models.
 
@@ -185,7 +187,7 @@ This structure fits much better with GPU execution.
 
 ---
 
-# Lessons from GPU Traffic Simulation
+## Lessons from GPU Traffic Simulation
 
 Developing GPU-based traffic simulation systems teaches several broader lessons about parallel computing.
 
@@ -203,7 +205,7 @@ Choosing the right simulation abstraction can make or break scalability.
 
 ---
 
-# Conclusion
+## Conclusion
 
 GPU acceleration can dramatically improve the scalability of traffic simulation systems.  
 However, achieving these improvements requires careful consideration of:
@@ -221,7 +223,7 @@ Understanding this interaction between **simulation models and hardware architec
 
 ---
 
-# Notes
+## Notes
 
 This article summarizes observations from my research on GPU-accelerated traffic simulation and large-scale urban traffic modeling.
 

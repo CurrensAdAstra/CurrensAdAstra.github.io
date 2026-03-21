@@ -201,6 +201,49 @@ body {
   width: 100%;
 }
 
+.panel-header-top {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.language-label {
+  opacity: 0.8;
+}
+
+.language-link {
+  color: var(--editor-fg);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.language-link:hover {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.language-current {
+  color: white;
+}
+
+.language-disabled {
+  opacity: 0.45;
+}
+
 
 /* Specific adjustment for active tab look if needed, but basic header is fine */
 

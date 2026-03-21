@@ -2,6 +2,8 @@
 title: "AI, Easter Island, and the Last Tree"
 date: 2026-03-11
 category: notes
+lang: en
+translation_key: ai-easter-island-last-tree
 tags: [ai, climate, technology, history, easter-island]
 ---
 

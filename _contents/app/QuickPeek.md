@@ -1,6 +1,8 @@
 ---
 title: "QuickPeek"
 category: "app"
+lang: en
+translation_key: quickpeek
 ---
 
 # QuickPeek – macOS Image Viewer

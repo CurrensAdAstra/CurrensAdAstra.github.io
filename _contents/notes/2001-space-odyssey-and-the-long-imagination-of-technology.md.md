@@ -2,6 +2,8 @@
 title: "2001: A Space Odyssey and the Long Imagination of Technology"
 date: 2026-03-11
 category: notes
+lang: en
+translation_key: 2001-space-odyssey-and-the-long-imagination-of-technology
 tags: [science-fiction, computing-history, technology, cinema]
 ---
 
