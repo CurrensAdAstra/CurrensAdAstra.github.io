@@ -202,11 +202,14 @@ body {
 }
 
 .panel-header-top {
-  justify-content: space-between;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 12px;
 }
 
 .panel-title {
+  flex: 1 1 auto;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -219,6 +222,9 @@ body {
   gap: 8px;
   flex-shrink: 0;
   font-size: 12px;
+  justify-self: end;
+  padding-left: 12px;
+  border-left: 1px solid var(--border-color);
 }
 
 .language-label {
