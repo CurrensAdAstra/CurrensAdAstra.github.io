@@ -153,6 +153,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // 테마 토글
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+
   // TOC 생성: 필요한 요소가 없으면 안전하게 종료
   if (!content || !toc) {
     return;

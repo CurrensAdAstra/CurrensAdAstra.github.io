@@ -17,6 +17,7 @@ i18n:
       mobile_title: VS Code 테마
       menu_open: 사이드바 메뉴 열기
       language: 언어
+      toggle_theme: 테마 변경
     en:
       home: Home
       notes: Notes
@@ -27,6 +28,7 @@ i18n:
       mobile_title: VS Code Theme
       menu_open: Open sidebar menu
       language: Language
+      toggle_theme: Toggle Theme
 
 collections:
   contents:
