@@ -140,35 +140,7 @@ Mar 2008 – Feb 2019
 
 ## Publications
 
-### Journal Articles
-
-Kyung, M.G. et al.  
-**Vision-based Reduction of Gyro Drift for Intelligent Vehicles**  
-Journal of Control, Robotics and Systems, 2016
-
----
-
-### Conference Papers
-
-Kyung, M.G. et al.  
-**Performance Measurement in GPU-Based Traffic Simulation**  
-Korea Information Processing Society Conference, 2019  
-
-Kyung, M.G. et al.  
-**Distributed and Parallel Traffic Simulation Program Using OpenMPI**  
-Korea Information Processing Society Conference, 2019  
-
-Kyung, M.G. et al.  
-**Development of AUTOSAR Conformance Testing Architecture Modeling Tool Using Eclipse GMF**  
-Korean Institute of Information Scientists and Engineers Conference, 2010  
-
-Kyung, M.G. et al.  
-**Comparison and Analysis of TTCN-3 GFT and UML Mapping**  
-Korean Institute of Information Scientists and Engineers Conference, 2009  
-
-Kyung, M.G. et al.  
-**Automotive Software Verification Using AUTOSAR Conformance Testing Tools**  
-Korean Institute of Information Scientists and Engineers Conference, 2009  
+See [Publications](/contents/personal/publications/) for the full publication list.
 
 ---
 

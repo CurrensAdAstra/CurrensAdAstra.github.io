@@ -118,31 +118,7 @@ Mar 2008 – Feb 2019
 
 ## Publications
 
-### Journal Articles
-Kyung, M.G. et al.  
-**Vision-based Reduction of Gyro Drift for Intelligent Vehicles**  
-Journal of Control, Robotics and Systems, 2016
-
-### Conference Papers
-Kyung, M.G. et al.  
-**Performance Measurement in GPU-Based Traffic Simulation**  
-KIPS Conference, 2019
-
-Kyung, M.G. et al.  
-**Distributed and Parallel Traffic Simulation Program Using OpenMPI**  
-KIPS Conference, 2019
-
-Kyung, M.G. et al.  
-**Development of AUTOSAR Conformance Testing Architecture Modeling Tool Using Eclipse GMF**  
-KIISE Conference, 2010
-
-Kyung, M.G. et al.  
-**Comparison and Analysis of TTCN-3 GFT and UML Mapping**  
-KIISE Conference, 2009
-
-Kyung, M.G. et al.  
-**Automotive Software Verification Using AUTOSAR Conformance Testing Tools**  
-KIISE Conference, 2009
+전체 논문 목록은 [Publications](/contents/personal/publications-ko/)에서 확인할 수 있습니다.
 
 ---
 
@@ -201,4 +177,3 @@ Spring Framework, Leaflet.js
 ---
 
 _Last updated: {{ "now" | date: "%Y-%m-%d" }}_
-

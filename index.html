@@ -15,6 +15,7 @@ translation_key: home
 {% assign about_page = localized_contents | where: "translation_key", "about" | first %}
 {% assign portfolio_page = localized_contents | where: "translation_key", "portfolio" | first %}
 {% assign cv_page = localized_contents | where: "translation_key", "cv" | first %}
+{% assign publications_page = localized_contents | where: "translation_key", "publications" | first %}
 {% assign research_page = localized_contents | where: "translation_key", "research" | first %}
 
 {% assign quickpeek_page = localized_contents | where: "translation_key", "quickpeek" | first %}
@@ -31,6 +32,7 @@ translation_key: home
   {% if about_page %}<li><a href="{{ site.baseurl }}{{ about_page.url }}">About</a></li>{% endif %}
   {% if portfolio_page %}<li><a href="{{ site.baseurl }}{{ portfolio_page.url }}">Portfolio</a></li>{% endif %}
   {% if cv_page %}<li><a href="{{ site.baseurl }}{{ cv_page.url }}">CV</a></li>{% endif %}
+  {% if publications_page %}<li><a href="{{ site.baseurl }}{{ publications_page.url }}">Publications</a></li>{% endif %}
   {% if research_page %}<li><a href="{{ site.baseurl }}{{ research_page.url }}">Research</a></li>{% endif %}
 </ul>
 
