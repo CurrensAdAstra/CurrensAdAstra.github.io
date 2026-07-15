@@ -22,24 +22,36 @@ translation_key: home
 {% assign triptych_page = localized_contents | where: "translation_key", "ide-style-three-panel-theme" | first %}
 {% assign ros2_page = localized_contents | where: "translation_key", "ros2-fanout-latency" | first %}
 
-<h1>환영합니다</h1>
-
-<p>이 사이트는 VS Code 스타일 내비게이션 UI를 사용해 문서와 포트폴리오 콘텐츠를 효율적으로 탐색할 수 있도록 설계되었습니다.</p>
-
-<h2>바로가기</h2>
-
-<ul class="home-links">
-  {% if about_page %}<li><a href="{{ site.baseurl }}{{ about_page.url }}">About</a></li>{% endif %}
-  {% if portfolio_page %}<li><a href="{{ site.baseurl }}{{ portfolio_page.url }}">Portfolio</a></li>{% endif %}
-  {% if cv_page %}<li><a href="{{ site.baseurl }}{{ cv_page.url }}">CV</a></li>{% endif %}
-  {% if publications_page %}<li><a href="{{ site.baseurl }}{{ publications_page.url }}">Publications</a></li>{% endif %}
-  {% if research_page %}<li><a href="{{ site.baseurl }}{{ research_page.url }}">Research</a></li>{% endif %}
-</ul>
-
-<h2>최근 문서</h2>
-
-<ul class="home-links">
-  {% if quickpeek_page %}<li><a href="{{ site.baseurl }}{{ quickpeek_page.url }}">QuickPeek</a></li>{% endif %}
-  {% if triptych_page %}<li><a href="{{ site.baseurl }}{{ triptych_page.url }}">Triptych</a></li>{% endif %}
-  {% if ros2_page %}<li><a href="{{ site.baseurl }}{{ ros2_page.url }}">ROS 2 Fan-Out Latency</a></li>{% endif %}
-</ul>
+{% assign categories = "notes,articles,app,personal" | split: "," %}
+<section class="category-browser" data-category-browser>
+  <div class="category-meta" aria-label="페이지 메타데이터">
+    <span>---</span>
+    <span><b>view</b>: category</span>
+    <span><b>filter</b>: <em data-category-filter-label>all</em></span>
+    <span><b>count</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
+    <span>---</span>
+  </div>
+  <h1 class="category-title">콘텐츠</h1>
+  <p class="category-sub"><span>// </span>이 작업 공간에 <b data-category-count>{{ localized_contents.size }}</b>개의 항목이 있습니다.</p>
+  <div class="category-chips" aria-label="콘텐츠 카테고리">
+    <button class="category-chip active" type="button" data-category="all">전체 <span>{{ localized_contents.size }}</span></button>
+    {% for cat in categories %}{% assign category_items = localized_contents | where: "category", cat %}
+      <button class="category-chip" type="button" data-category="{{ cat }}">{{ labels[cat] | default: cat }} <span>{{ category_items.size }}</span></button>
+    {% endfor %}
+  </div>
+  <div class="category-posts">
+    {% assign sorted_contents = localized_contents | sort: "date" | reverse %}
+    {% for item in sorted_contents %}
+      <a class="category-card" href="{{ site.baseurl }}{{ item.url }}" data-category-card="{{ item.category }}">
+        <div class="category-card-main">
+          <div class="category-card-kicker"><span>◧</span> {{ labels[item.category] | default: item.category }}</div>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
+          {% if item.tags %}<div class="category-card-tags">{% for tag in item.tags limit: 4 %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}
+        </div>
+        <div class="category-card-side">{% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y.%m.%d" }}</time>{% endif %}<span aria-hidden="true">→</span></div>
+      </a>
+    {% endfor %}
+  </div>
+  <p class="category-empty" hidden>이 카테고리에는 항목이 없습니다.</p>
+</section>

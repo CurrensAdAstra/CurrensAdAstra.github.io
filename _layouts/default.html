@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {% assign current_lang = page.lang | default: site.i18n.default_lang | default: "ko" %}
 {% assign labels = site.i18n.labels[current_lang] | default: site.i18n.labels[site.i18n.default_lang] %}
+{% assign localized_contents = site.contents | where: "lang", current_lang %}
+{% if localized_contents == empty %}{% assign localized_contents = site.contents %}{% endif %}
 {% assign translation_key = page.translation_key | default: page.slug | default: page.title %}
 {% if page.collection == "contents" %}
 {% assign translation_candidates = site.contents | where: "translation_key", translation_key %}
@@ -68,10 +70,35 @@
                     {{ content }}
                 </div>
 
-                <div class="toc-panel" id="toc-panel">
-                    <div class="toc-title">{{ labels.outline }}</div>
-                    <!-- TOC Content will be injected here or manually placed -->
-                </div>
+                <aside class="toc-panel" id="toc-panel">
+                    <section class="toc-section">
+                        <div class="toc-title">{{ labels.outline }}</div>
+                        <nav class="toc-links" data-toc-links aria-label="{{ labels.outline }}"></nav>
+                    </section>
+
+                    {% if page.collection == "contents" %}
+                    {% assign page_series = page.series | default: page.category %}
+                    {% assign series_items = localized_contents | where: "series", page_series %}
+                    {% if series_items == empty %}
+                    {% assign series_items = localized_contents | where: "category", page.category %}
+                    {% endif %}
+                    {% assign series_items = series_items | sort: "date" | reverse %}
+                    {% if page_series and series_items != empty %}
+                    <section class="toc-section series-section">
+                        <div class="toc-title">series</div>
+                        <div class="series-name">§ {{ labels[page_series] | default: page_series }}</div>
+                        <nav class="series-list" aria-label="Series: {{ page_series }}">
+                            {% for item in series_items %}
+                            <a class="series-item {% if item.url == page.url %}current{% endif %}" href="{{ site.baseurl }}{{ item.url }}" title="{{ item.title }}">
+                                <span aria-hidden="true">{% if item.url == page.url %}▸{% else %}·{% endif %}</span>
+                                <span>{{ item.title }}</span>
+                            </a>
+                            {% endfor %}
+                        </nav>
+                    </section>
+                    {% endif %}
+                    {% endif %}
+                </aside>
             </div>
         </div>
     </div>

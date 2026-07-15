@@ -4,6 +4,31 @@ document.addEventListener('DOMContentLoaded', function () {
   const sidebarContainer = document.getElementById('sidebar-container');
   const menuToggleButton = document.querySelector('.menu-toggle');
 
+  const categoryBrowser = document.querySelector('[data-category-browser]');
+  if (categoryBrowser) {
+    const chips = categoryBrowser.querySelectorAll('[data-category]');
+    const cards = categoryBrowser.querySelectorAll('[data-category-card]');
+    const countLabels = categoryBrowser.querySelectorAll('[data-category-count]');
+    const filterLabel = categoryBrowser.querySelector('[data-category-filter-label]');
+    const emptyState = categoryBrowser.querySelector('.category-empty');
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        const selected = chip.dataset.category;
+        let visibleCount = 0;
+        chips.forEach(function (item) { item.classList.toggle('active', item === chip); });
+        cards.forEach(function (card) {
+          const visible = selected === 'all' || card.dataset.categoryCard === selected;
+          card.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        countLabels.forEach(function (label) { label.textContent = visibleCount; });
+        if (filterLabel) filterLabel.textContent = selected;
+        if (emptyState) emptyState.hidden = visibleCount !== 0;
+      });
+    });
+  }
+
   function linkifyTextUrls(root) {
     const urlRegex = /https?:\/\/[^\s<>"'`]+/g;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
@@ -175,30 +200,40 @@ document.addEventListener('DOMContentLoaded', function () {
   // YouTube 링크를 재생 가능한 임베드 박스로 변환
   embedYouTubeLinks(content);
 
-  const headers = content.querySelectorAll('h1, h2');
-  const ul = document.createElement('ul');
+  const headers = content.querySelectorAll('h1, h2, h3');
+  const tocLinks = toc.querySelector('[data-toc-links]') || toc;
+  const anchors = [];
 
   headers.forEach(function (header) {
     if (!header.id) {
       return;
     }
 
-    const li = document.createElement('li');
     const a = document.createElement('a');
     a.href = '#' + header.id;
     a.textContent = header.textContent;
-    li.appendChild(a);
-
-    ul.appendChild(li);
+    a.className = 'toc-item level-' + header.tagName.slice(1);
+    tocLinks.appendChild(a);
+    anchors.push({ header: header, link: a });
   });
 
-  if (headers.length > 0) {
-    toc.appendChild(ul);
+  if (anchors.length > 0) {
+    function updateActiveOutline() {
+      let active = anchors[0];
+      anchors.forEach(function (entry) {
+        if (entry.header.getBoundingClientRect().top <= 120) active = entry;
+      });
+      anchors.forEach(function (entry) {
+        entry.link.classList.toggle('active', entry === active);
+      });
+    }
+    content.addEventListener('scroll', updateActiveOutline, { passive: true });
+    updateActiveOutline();
     return;
   }
 
   const emptyState = document.createElement('div');
   emptyState.className = 'toc-empty';
   emptyState.textContent = 'No outline';
-  toc.appendChild(emptyState);
+  tocLinks.appendChild(emptyState);
 });

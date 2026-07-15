@@ -22,24 +22,46 @@ translation_key: home
 {% assign triptych_page = localized_contents | where: "translation_key", "ide-style-three-panel-theme" | first %}
 {% assign ros2_page = localized_contents | where: "translation_key", "ros2-fanout-latency" | first %}
 
-<h1>Welcome</h1>
+{% assign categories = "notes,articles,app,personal" | split: "," %}
+<section class="category-browser" data-category-browser>
+  <div class="category-meta" aria-label="Page metadata">
+    <span>---</span>
+    <span><b>view</b>: category</span>
+    <span><b>filter</b>: <em data-category-filter-label>all</em></span>
+    <span><b>count</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
+    <span>---</span>
+  </div>
 
-<p>This site uses a VS Code-style navigation UI so you can browse documents and portfolio content efficiently.</p>
+  <h1 class="category-title">Contents</h1>
+  <p class="category-sub"><span>// </span><b data-category-count>{{ localized_contents.size }}</b> entries in this workspace.</p>
 
-<h2>Quick Links</h2>
+  <div class="category-chips" aria-label="Content categories">
+    <button class="category-chip active" type="button" data-category="all">All <span>{{ localized_contents.size }}</span></button>
+    {% for cat in categories %}
+      {% assign category_items = localized_contents | where: "category", cat %}
+      <button class="category-chip" type="button" data-category="{{ cat }}">{{ labels[cat] | default: cat }} <span>{{ category_items.size }}</span></button>
+    {% endfor %}
+  </div>
 
-<ul class="home-links">
-  {% if about_page %}<li><a href="{{ site.baseurl }}{{ about_page.url }}">About</a></li>{% endif %}
-  {% if portfolio_page %}<li><a href="{{ site.baseurl }}{{ portfolio_page.url }}">Portfolio</a></li>{% endif %}
-  {% if cv_page %}<li><a href="{{ site.baseurl }}{{ cv_page.url }}">CV</a></li>{% endif %}
-  {% if publications_page %}<li><a href="{{ site.baseurl }}{{ publications_page.url }}">Publications</a></li>{% endif %}
-  {% if research_page %}<li><a href="{{ site.baseurl }}{{ research_page.url }}">Research</a></li>{% endif %}
-</ul>
+  <div class="category-posts">
+    {% assign sorted_contents = localized_contents | sort: "date" | reverse %}
+    {% for item in sorted_contents %}
+      <a class="category-card" href="{{ site.baseurl }}{{ item.url }}" data-category-card="{{ item.category }}">
+        <div class="category-card-main">
+          <div class="category-card-kicker"><span>◧</span> {{ labels[item.category] | default: item.category }}</div>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
+          {% if item.tags %}
+          <div class="category-card-tags">{% for tag in item.tags limit: 4 %}<span>{{ tag }}</span>{% endfor %}</div>
+          {% endif %}
+        </div>
+        <div class="category-card-side">
+          {% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y.%m.%d" }}</time>{% endif %}
+          <span aria-hidden="true">→</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 
-<h2>Recent Documents</h2>
-
-<ul class="home-links">
-  {% if quickpeek_page %}<li><a href="{{ site.baseurl }}{{ quickpeek_page.url }}">QuickPeek</a></li>{% endif %}
-  {% if triptych_page %}<li><a href="{{ site.baseurl }}{{ triptych_page.url }}">Triptych</a></li>{% endif %}
-  {% if ros2_page %}<li><a href="{{ site.baseurl }}{{ ros2_page.url }}">ROS 2 Fan-Out Latency</a></li>{% endif %}
-</ul>
+  <p class="category-empty" hidden>No entries in this category.</p>
+</section>
