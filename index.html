@@ -12,56 +12,68 @@ translation_key: home
 {% assign localized_contents = site.contents %}
 {% endif %}
 
-{% assign about_page = localized_contents | where: "translation_key", "about" | first %}
-{% assign portfolio_page = localized_contents | where: "translation_key", "portfolio" | first %}
-{% assign cv_page = localized_contents | where: "translation_key", "cv" | first %}
-{% assign publications_page = localized_contents | where: "translation_key", "publications" | first %}
-{% assign research_page = localized_contents | where: "translation_key", "research" | first %}
-
-{% assign quickpeek_page = localized_contents | where: "translation_key", "quickpeek" | first %}
-{% assign triptych_page = localized_contents | where: "translation_key", "ide-style-three-panel-theme" | first %}
-{% assign ros2_page = localized_contents | where: "translation_key", "ros2-fanout-latency" | first %}
-
 {% assign categories = "notes,articles,app,personal" | split: "," %}
+{% assign sorted_contents = localized_contents | sort: "date" | reverse %}
+
 <section class="category-browser" data-category-browser>
   <div class="category-meta" aria-label="Page metadata">
     <span>---</span>
-    <span><b>view</b>: category</span>
-    <span><b>filter</b>: <em data-category-filter-label>all</em></span>
-    <span><b>count</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
+    <span><b>title</b>: {{ site.title }}</span>
+    <span><b>view</b>: index</span>
+    <span><b>entries</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
     <span>---</span>
   </div>
 
-  <h1 class="category-title">Contents</h1>
-  <p class="category-sub"><span>// </span><b data-category-count>{{ localized_contents.size }}</b> entries in this workspace.</p>
+  <h1 class="hero-title"><span class="hero-hash">#</span> a personal notebook<br><u>kept in the open.</u></h1>
+  <p class="hero-sub">// research, engineering, and the things in between.</p>
 
-  <div class="category-chips" aria-label="Content categories">
-    <button class="category-chip active" type="button" data-category="all">All <span>{{ localized_contents.size }}</span></button>
+  <div class="section-head"><h2>series</h2><span class="section-note">browse by category</span></div>
+  <div class="series-grid">
     {% for cat in categories %}
       {% assign category_items = localized_contents | where: "category", cat %}
-      <button class="category-chip" type="button" data-category="{{ cat }}">{{ labels[cat] | default: cat }} <span>{{ category_items.size }}</span></button>
+      <button type="button" class="series-card" data-category="{{ cat }}" aria-label="Filter: {{ labels[cat] | default: cat }}">
+        <span class="series-card-icon" aria-hidden="true">§</span>
+        <span class="series-card-body">
+          <span class="series-card-name">{{ labels[cat] | default: cat }}</span>
+          <span class="series-card-meta">{{ category_items.size }} entries</span>
+        </span>
+        <span class="series-card-arrow" aria-hidden="true">→</span>
+      </button>
     {% endfor %}
   </div>
 
+  <div class="section-head"><h2>latest</h2><span class="section-note">sorted by date · filter: <em data-category-filter-label>all</em></span></div>
   <div class="category-posts">
-    {% assign sorted_contents = localized_contents | sort: "date" | reverse %}
     {% for item in sorted_contents %}
       <a class="category-card" href="{{ site.baseurl }}{{ item.url }}" data-category-card="{{ item.category }}">
         <div class="category-card-main">
-          <div class="category-card-kicker"><span>◧</span> {{ labels[item.category] | default: item.category }}</div>
+          <div class="category-card-kicker">
+            <span class="entry-badge" data-cat="{{ item.category }}">{{ labels[item.category] | default: item.category }}</span>
+            {% if item.tags %}<span class="entry-tags">{% for tag in item.tags limit: 3 %}<span>#{{ tag }}</span>{% endfor %}</span>{% endif %}
+          </div>
           <h2>{{ item.title }}</h2>
           <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
-          {% if item.tags %}
-          <div class="category-card-tags">{% for tag in item.tags limit: 4 %}<span>{{ tag }}</span>{% endfor %}</div>
-          {% endif %}
         </div>
         <div class="category-card-side">
-          {% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y.%m.%d" }}</time>{% endif %}
+          {% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y-%m-%d" }}</time>{% endif %}
           <span aria-hidden="true">→</span>
         </div>
       </a>
     {% endfor %}
   </div>
-
   <p class="category-empty" hidden>No entries in this category.</p>
+
+  {% assign tag_list = "" | split: "" %}
+  {% for item in localized_contents %}{% for t in item.tags %}{% assign tag_list = tag_list | push: t %}{% endfor %}{% endfor %}
+  {% assign uniq_tags = tag_list | uniq | sort %}
+  {% if uniq_tags.size > 0 %}
+  <div class="section-head"><h2>tags</h2><span class="section-note">{{ uniq_tags.size }} tags · weighted by count</span></div>
+  <div class="tag-cloud">
+    {% for t in uniq_tags %}
+      {% assign c = 0 %}{% for x in tag_list %}{% if x == t %}{% assign c = c | plus: 1 %}{% endif %}{% endfor %}
+      {% assign sz = c | times: 2 | plus: 11 %}
+      <span class="tag" style="font-size: {{ sz }}px">#{{ t }}<b>{{ c }}</b></span>
+    {% endfor %}
+  </div>
+  {% endif %}
 </section>

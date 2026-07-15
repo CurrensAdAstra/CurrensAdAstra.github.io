@@ -6,25 +6,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const categoryBrowser = document.querySelector('[data-category-browser]');
   if (categoryBrowser) {
-    const chips = categoryBrowser.querySelectorAll('[data-category]');
+    const filters = categoryBrowser.querySelectorAll('[data-category]');
     const cards = categoryBrowser.querySelectorAll('[data-category-card]');
     const countLabels = categoryBrowser.querySelectorAll('[data-category-count]');
     const filterLabel = categoryBrowser.querySelector('[data-category-filter-label]');
     const emptyState = categoryBrowser.querySelector('.category-empty');
+    let current = 'all';
 
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        const selected = chip.dataset.category;
-        let visibleCount = 0;
-        chips.forEach(function (item) { item.classList.toggle('active', item === chip); });
-        cards.forEach(function (card) {
-          const visible = selected === 'all' || card.dataset.categoryCard === selected;
-          card.hidden = !visible;
-          if (visible) visibleCount += 1;
-        });
-        countLabels.forEach(function (label) { label.textContent = visibleCount; });
-        if (filterLabel) filterLabel.textContent = selected;
-        if (emptyState) emptyState.hidden = visibleCount !== 0;
+    function applyFilter(selected) {
+      let visibleCount = 0;
+      filters.forEach(function (item) {
+        item.classList.toggle('active', selected !== 'all' && item.dataset.category === selected);
+      });
+      cards.forEach(function (card) {
+        const visible = selected === 'all' || card.dataset.categoryCard === selected;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      countLabels.forEach(function (label) { label.textContent = visibleCount; });
+      if (filterLabel) filterLabel.textContent = selected;
+      if (emptyState) emptyState.hidden = visibleCount !== 0;
+    }
+
+    filters.forEach(function (filter) {
+      filter.addEventListener('click', function (event) {
+        event.preventDefault();
+        const selected = filter.dataset.category;
+        // Clicking the active category again clears the filter.
+        current = current === selected ? 'all' : selected;
+        applyFilter(current);
       });
     });
   }

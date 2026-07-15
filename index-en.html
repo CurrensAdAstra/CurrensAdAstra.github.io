@@ -6,52 +6,74 @@ lang: ko
 translation_key: home
 ---
 
-{% assign current_lang = page.lang | default: site.i18n.default_lang | default: "en" %}
+{% assign current_lang = page.lang | default: site.i18n.default_lang | default: "ko" %}
 {% assign localized_contents = site.contents | where: "lang", current_lang %}
 {% if localized_contents == empty %}
 {% assign localized_contents = site.contents %}
 {% endif %}
 
-{% assign about_page = localized_contents | where: "translation_key", "about" | first %}
-{% assign portfolio_page = localized_contents | where: "translation_key", "portfolio" | first %}
-{% assign cv_page = localized_contents | where: "translation_key", "cv" | first %}
-{% assign publications_page = localized_contents | where: "translation_key", "publications" | first %}
-{% assign research_page = localized_contents | where: "translation_key", "research" | first %}
-
-{% assign quickpeek_page = localized_contents | where: "translation_key", "quickpeek" | first %}
-{% assign triptych_page = localized_contents | where: "translation_key", "ide-style-three-panel-theme" | first %}
-{% assign ros2_page = localized_contents | where: "translation_key", "ros2-fanout-latency" | first %}
-
 {% assign categories = "notes,articles,app,personal" | split: "," %}
+{% assign sorted_contents = localized_contents | sort: "date" | reverse %}
+
 <section class="category-browser" data-category-browser>
   <div class="category-meta" aria-label="페이지 메타데이터">
     <span>---</span>
-    <span><b>view</b>: category</span>
-    <span><b>filter</b>: <em data-category-filter-label>all</em></span>
-    <span><b>count</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
+    <span><b>title</b>: {{ site.title }}</span>
+    <span><b>view</b>: index</span>
+    <span><b>entries</b>: <em data-category-count>{{ localized_contents.size }}</em></span>
     <span>---</span>
   </div>
-  <h1 class="category-title">콘텐츠</h1>
-  <p class="category-sub"><span>// </span>이 작업 공간에 <b data-category-count>{{ localized_contents.size }}</b>개의 항목이 있습니다.</p>
-  <div class="category-chips" aria-label="콘텐츠 카테고리">
-    <button class="category-chip active" type="button" data-category="all">전체 <span>{{ localized_contents.size }}</span></button>
-    {% for cat in categories %}{% assign category_items = localized_contents | where: "category", cat %}
-      <button class="category-chip" type="button" data-category="{{ cat }}">{{ labels[cat] | default: cat }} <span>{{ category_items.size }}</span></button>
+
+  <h1 class="hero-title"><span class="hero-hash">#</span> 열린 채로 쌓아가는<br><u>기록 노트.</u></h1>
+  <p class="hero-sub">// 연구와 개발, 그리고 그 사이의 것들.</p>
+
+  <div class="section-head"><h2>series</h2><span class="section-note">카테고리로 보기</span></div>
+  <div class="series-grid">
+    {% for cat in categories %}
+      {% assign category_items = localized_contents | where: "category", cat %}
+      <button type="button" class="series-card" data-category="{{ cat }}" aria-label="필터: {{ labels[cat] | default: cat }}">
+        <span class="series-card-icon" aria-hidden="true">§</span>
+        <span class="series-card-body">
+          <span class="series-card-name">{{ labels[cat] | default: cat }}</span>
+          <span class="series-card-meta">{{ category_items.size }}개 항목</span>
+        </span>
+        <span class="series-card-arrow" aria-hidden="true">→</span>
+      </button>
     {% endfor %}
   </div>
+
+  <div class="section-head"><h2>latest</h2><span class="section-note">날짜순 · 필터: <em data-category-filter-label>all</em></span></div>
   <div class="category-posts">
-    {% assign sorted_contents = localized_contents | sort: "date" | reverse %}
     {% for item in sorted_contents %}
       <a class="category-card" href="{{ site.baseurl }}{{ item.url }}" data-category-card="{{ item.category }}">
         <div class="category-card-main">
-          <div class="category-card-kicker"><span>◧</span> {{ labels[item.category] | default: item.category }}</div>
+          <div class="category-card-kicker">
+            <span class="entry-badge" data-cat="{{ item.category }}">{{ labels[item.category] | default: item.category }}</span>
+            {% if item.tags %}<span class="entry-tags">{% for tag in item.tags limit: 3 %}<span>#{{ tag }}</span>{% endfor %}</span>{% endif %}
+          </div>
           <h2>{{ item.title }}</h2>
           <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
-          {% if item.tags %}<div class="category-card-tags">{% for tag in item.tags limit: 4 %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}
         </div>
-        <div class="category-card-side">{% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y.%m.%d" }}</time>{% endif %}<span aria-hidden="true">→</span></div>
+        <div class="category-card-side">
+          {% if item.date %}<time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y-%m-%d" }}</time>{% endif %}
+          <span aria-hidden="true">→</span>
+        </div>
       </a>
     {% endfor %}
   </div>
   <p class="category-empty" hidden>이 카테고리에는 항목이 없습니다.</p>
+
+  {% assign tag_list = "" | split: "" %}
+  {% for item in localized_contents %}{% for t in item.tags %}{% assign tag_list = tag_list | push: t %}{% endfor %}{% endfor %}
+  {% assign uniq_tags = tag_list | uniq | sort %}
+  {% if uniq_tags.size > 0 %}
+  <div class="section-head"><h2>tags</h2><span class="section-note">태그 {{ uniq_tags.size }}개 · 사용 빈도순</span></div>
+  <div class="tag-cloud">
+    {% for t in uniq_tags %}
+      {% assign c = 0 %}{% for x in tag_list %}{% if x == t %}{% assign c = c | plus: 1 %}{% endif %}{% endfor %}
+      {% assign sz = c | times: 2 | plus: 11 %}
+      <span class="tag" style="font-size: {{ sz }}px">#{{ t }}<b>{{ c }}</b></span>
+    {% endfor %}
+  </div>
+  {% endif %}
 </section>
