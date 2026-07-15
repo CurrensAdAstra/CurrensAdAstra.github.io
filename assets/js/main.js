@@ -232,8 +232,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  const emptyState = document.createElement('div');
-  emptyState.className = 'toc-empty';
-  emptyState.textContent = 'No outline';
-  tocLinks.appendChild(emptyState);
+  // No headings to outline. If the panel has nothing else to offer
+  // (e.g. no series list), hide it entirely so the content gets the space.
+  const hasSeries = toc.querySelector('.series-section');
+  if (hasSeries) {
+    const emptyState = document.createElement('div');
+    emptyState.className = 'toc-empty';
+    emptyState.textContent = 'No outline';
+    tocLinks.appendChild(emptyState);
+  } else {
+    toc.classList.add('is-empty');
+  }
 });
