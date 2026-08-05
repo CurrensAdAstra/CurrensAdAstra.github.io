@@ -95,7 +95,7 @@ Nov 2023 – Mar 2025
 
 ### Senior Research Engineer (Robotics Systems)  
 **Argosdyne Co., Ltd.**  
-Jan 2023 – Oct 2023  
+Jan 2023 – Nov 2023  
 
 - Designed ROS 2–based UAV control architectures  
 - Integrated ArduPilot with ROS 2 middleware  
@@ -117,15 +117,31 @@ Jul 2021 – Nov 2022
 
 ### Lecturer
 
+**Konkuk University** (Mar 2026 – Present)  
+- Introduction to Computer Engineering (taught in English)  
+
+**Konkuk University** (2016)  
+- Introduction to Creative Engineering Design  
+
+**Kookmin University** (2015)  
+- Object-Oriented Programming  
+
 **Nazareth University** (2013)  
 - Operating Systems  
 - Software Development Project  
+- Studies in Teaching Materials and Methods for Informatics & Computer Education  
 
 **Hansung University** (2013)  
 - Data Communications  
 
-**Kookmin University** (2015)  
-- Object-Oriented Programming  
+---
+
+### Community Instructor  
+**Saegammaeul Childcare Center (새감마을지역아동센터)**  
+Nov 2020 – Present  
+
+- Video editing instruction using DaVinci Resolve  
+- Spreadsheet (Excel) and basic data management instruction  
 
 ---
 
@@ -194,8 +210,10 @@ Spring Framework, Leaflet.js
 ## Academic Service & Outreach
 
 - University-level teaching in operating systems, networking,
-  object-oriented programming, and software engineering  
-- Technical education outreach through community and university programs  
+  object-oriented programming, computer education methods,
+  and software engineering  
+- Technical education outreach through community programs
+  (see Teaching Experience)  
 
 ---
 

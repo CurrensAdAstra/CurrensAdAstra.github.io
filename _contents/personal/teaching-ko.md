@@ -70,15 +70,20 @@ translation_key: teaching
 
 대한민국 여러 대학에서 강의했습니다.
 
-### Nazareth University
-- Operating Systems
-- Software Development Project
-
-### Hansung University
-- Data Communications
+### Konkuk University
+- Introduction to Computer Engineering, 영어 강의 (2026.03 – 현재)
+- 창의적공학설계입문 (2016)
 
 ### Kookmin University
 - Object-Oriented Programming
+
+### Nazareth University
+- Operating Systems
+- Software Development Project
+- 정보컴퓨터교과교재연구 및 지도법
+
+### Hansung University
+- Data Communications
 
 또한 **건국대학교(2008–2019) 조교/연구조교**로 실습 지원, 학생 멘토링, 강의 개발을 수행했습니다.
 
@@ -88,10 +93,10 @@ translation_key: teaching
 
 대학 강의 외에도 지역사회 교육에 참여했습니다.
 
-**새감마을지역아동센터**에서 다음과 같은 실무형 디지털 역량 교육을 진행했습니다.
+**새감마을지역아동센터**에서 2020년 11월부터 다음과 같은 실무형 디지털 역량 교육을 진행하고 있습니다.
 
-- 영상 편집 소프트웨어 활용
-- 스프레드시트/기초 데이터 관리
+- DaVinci Resolve 기반 영상 편집
+- 엑셀 스프레드시트/기초 데이터 관리
 
 프로그램은 **접근 가능한 기술교육과 디지털 문해력 향상**에 초점을 둡니다.
 

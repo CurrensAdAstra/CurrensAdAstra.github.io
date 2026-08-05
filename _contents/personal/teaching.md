@@ -75,15 +75,20 @@ This approach allows students to develop both **conceptual understanding and eng
 
 I have taught courses at several universities in Korea.
 
-### Nazareth University
-- Operating Systems
-- Software Development Project
-
-### Hansung University
-- Data Communications
+### Konkuk University
+- Introduction to Computer Engineering, taught in English (March 2026 – Present)
+- Introduction to Creative Engineering Design (2016)
 
 ### Kookmin University
 - Object-Oriented Programming
+
+### Nazareth University
+- Operating Systems
+- Software Development Project
+- Studies in Teaching Materials and Methods for Informatics & Computer Education
+
+### Hansung University
+- Data Communications
 
 In addition, I served as a **teaching assistant and research assistant at Konkuk University (2008–2019)**, supporting laboratory instruction, student mentoring, and course development.
 
@@ -93,10 +98,10 @@ In addition, I served as a **teaching assistant and research assistant at Konkuk
 
 Beyond university teaching, I have also participated in community education programs.
 
-At **Saegammaeul Childcare Center**, I teach practical digital skills such as:
+At **Saegammaeul Childcare Center**, where I have taught since November 2020, I cover practical digital skills such as:
 
-- Video editing using modern editing software
-- Basic spreadsheet and data management skills
+- Video editing using DaVinci Resolve
+- Basic spreadsheet (Excel) and data management skills
 
 These programs focus on **accessible technical education and digital literacy**, helping learners develop practical skills that can be applied in everyday life.
 
