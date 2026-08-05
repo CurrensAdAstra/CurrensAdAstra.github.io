@@ -70,15 +70,7 @@ The platform operates under strict certification, stability, and power-managemen
 The system was deployed in commercial environments requiring long-term reliability and maintainability.
 
 <div class="shot-grid">
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-01-playback.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-01-playback.jpg" alt="Set-top box UI rendered on a TV during playback verification" loading="lazy" decoding="async"></a><figcaption>KSTB5220 — playback error reproduction and AVS option verification on target</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-02-bench.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-02-bench.jpg" alt="Development bench with several set-top box boards and a remote control" loading="lazy" decoding="async"></a><figcaption>Development bench — multiple target boards for button and driver debugging</figcaption></figure>
-  <figure class="fit"><a href="{{ site.baseurl }}/assets/img/portfolio/stb-03-cert-bench.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-03-cert-bench.jpg" alt="Certification bench with oscilloscope, power supply and instrumentation" loading="lazy" decoding="async"></a><figcaption>KSTB4181 — instrumentation bench for Dolby MS12 v1.3.4 / TB-44 certification</figcaption></figure>
-  <figure class="fit"><a href="{{ site.baseurl }}/assets/img/portfolio/stb-07-audio-test.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-07-audio-test.jpg" alt="Audio decode verification desk with stream metadata on screen" loading="lazy" decoding="async"></a><figcaption>Audio decode verification during the certification test runs</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-04-standby-power.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-04-standby-power.jpg" alt="Power analyzer measuring standby consumption of a set-top box" loading="lazy" decoding="async"></a><figcaption>Deep-standby power measurement for EU standby-power compliance</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-05-front-panel.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-05-front-panel.jpg" alt="Close-up of a set-top box front panel with status LEDs lit" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — front-panel LED control via a custom kernel driver</figcaption></figure>
   <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-08-ui-desk.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-08-ui-desk.jpg" alt="Development desk with a TV showing the streaming interface" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — streaming UI verification at the development desk</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-09-audio-room.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-09-audio-room.jpg" alt="Listening room with speakers, subwoofer and a set-top box under test" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — audio playback checks in the listening room</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-06-rdk-boards.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-06-rdk-boards.jpg" alt="RDK pilot units and a factory test screen showing per-module results" loading="lazy" decoding="async"></a><figcaption>KSTB3220 — Yocto/RDK bring-up: device tree, button handling, factory test pass</figcaption></figure>
 </div>
 
 ---
@@ -193,9 +185,7 @@ The platform enabled automated validation of automotive software components and 
 ### Daegu Utility Network GIS / Line Management System
 
 <div class="shot-grid shot-grid-fit">
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg" alt="GIS map view of the Daegu utility network with a facility detail panel" loading="lazy" decoding="async"></a><figcaption>Network map view rebuilt on a current Leaflet.js stack, with facility attributes</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-02-line-management.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-02-line-management.jpg" alt="Web interface for line number registration and management" loading="lazy" decoding="async"></a><figcaption>Line-number registration and management interface</figcaption></figure>
-</div>
+  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg" alt="GIS map view of the Daegu utility network with a facility detail panel" loading="lazy" decoding="async"></a><figcaption>Network map view rebuilt on a current Leaflet.js stack, with facility attributes</figcaption></figure></div>
 
 ### M-Drive — High-Speed Media Transfer over QUIC
 

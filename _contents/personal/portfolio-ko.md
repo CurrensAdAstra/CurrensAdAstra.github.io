@@ -59,15 +59,7 @@ translation_key: portfolio
 장기 신뢰성과 유지보수성이 요구되는 상용 환경 배포를 완료했습니다.
 
 <div class="shot-grid">
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-01-playback.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-01-playback.jpg" alt="TV에 재생 중인 셋톱박스 UI 화면" loading="lazy" decoding="async"></a><figcaption>KSTB5220 — 영상 재생 오류 재현 및 AVS 옵션 검증</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-02-bench.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-02-bench.jpg" alt="여러 대의 셋톱박스 보드와 리모컨이 놓인 개발 벤치" loading="lazy" decoding="async"></a><figcaption>개발 벤치 — 버튼 동작 및 드라이버 디버깅용 타깃 보드</figcaption></figure>
-  <figure class="fit"><a href="{{ site.baseurl }}/assets/img/portfolio/stb-03-cert-bench.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-03-cert-bench.jpg" alt="오실로스코프와 전원 공급기가 놓인 인증 계측 환경" loading="lazy" decoding="async"></a><figcaption>KSTB4181 — 돌비 MS12 v1.3.4 / TB-44 인증 계측 환경</figcaption></figure>
-  <figure class="fit"><a href="{{ site.baseurl }}/assets/img/portfolio/stb-07-audio-test.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-07-audio-test.jpg" alt="스트림 정보가 표시된 화면 앞의 오디오 검증 환경" loading="lazy" decoding="async"></a><figcaption>인증 시험 중 오디오 디코딩 검증</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-04-standby-power.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-04-standby-power.jpg" alt="셋톱박스의 대기전력을 측정하는 전력 분석기" loading="lazy" decoding="async"></a><figcaption>EU 대기전력 기준 대응을 위한 초전력모드 전력 측정</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-05-front-panel.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-05-front-panel.jpg" alt="상태 LED가 켜진 셋톱박스 전면 패널 근접 사진" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — 커널 드라이버로 제어하는 전면 LED</figcaption></figure>
   <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-08-ui-desk.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-08-ui-desk.jpg" alt="스트리밍 화면이 표시된 TV가 놓인 개발 자리" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — 개발 환경에서의 스트리밍 UI 검증</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-09-audio-room.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-09-audio-room.jpg" alt="스피커와 서브우퍼, 시험 중인 셋톱박스가 놓인 청음실" loading="lazy" decoding="async"></a><figcaption>KSTB6150 — 청음실에서의 오디오 재생 확인</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/stb-06-rdk-boards.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/stb-06-rdk-boards.jpg" alt="RDK 파일럿 유닛과 모듈별 결과가 표시된 공정 검사 화면" loading="lazy" decoding="async"></a><figcaption>KSTB3220 — Yocto/RDK 브링업: 디바이스 트리·버튼 기능, 공정 검사</figcaption></figure>
 </div>
 
 ---
@@ -166,9 +158,7 @@ AUTOSAR 기반 차량용 임베디드 소프트웨어의 **검증 자동화**를
 ### 대구 자가망 GIS / 선번 관리 시스템
 
 <div class="shot-grid shot-grid-fit">
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg" alt="설비 상세 패널이 열린 대구 자가망 GIS 지도 화면" loading="lazy" decoding="async"></a><figcaption>최신 leaflet.js 기반으로 재구축한 자가망 지도 및 설비 속성 조회</figcaption></figure>
-  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-02-line-management.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-02-line-management.jpg" alt="선번 등록 및 관리 기능이 표시된 웹 화면" loading="lazy" decoding="async"></a><figcaption>선번 등록·관리 화면</figcaption></figure>
-</div>
+  <figure><a href="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg"><img src="{{ site.baseurl }}/assets/img/portfolio/gis-01-network-map.jpg" alt="설비 상세 패널이 열린 대구 자가망 GIS 지도 화면" loading="lazy" decoding="async"></a><figcaption>최신 leaflet.js 기반으로 재구축한 자가망 지도 및 설비 속성 조회</figcaption></figure></div>
 
 ### M-Drive — QUIC 기반 고속 전송
 
