@@ -63,5 +63,5 @@ when the App is uninstalled. There is no developer-held data to request deletion
 
 ## Contact
 
-- Email: [MinGi.KYUNG@gmail.com](mailto:MinGi.KYUNG@gmail.com)
+- Email: [wise.polymathes+corvix@gmail.com](mailto:wise.polymathes+corvix@gmail.com)
 - Privacy policy: [/corvix-shell/privacy/](/corvix-shell/privacy/)

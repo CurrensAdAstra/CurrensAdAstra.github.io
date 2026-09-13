@@ -61,5 +61,5 @@ translation_key: corvix-shell
 
 ## 문의
 
-- 이메일: [MinGi.KYUNG@gmail.com](mailto:MinGi.KYUNG@gmail.com)
+- 이메일: [wise.polymathes+corvix@gmail.com](mailto:wise.polymathes+corvix@gmail.com)
 - 개인정보처리방침: [/corvix-shell/privacy/](/corvix-shell/privacy/)
