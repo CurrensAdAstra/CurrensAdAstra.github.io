@@ -26,6 +26,8 @@ It presents embedded software development and systems research content through a
 │   ├── articles/
 │   ├── notes/
 │   └── personal/
+├── corvix-shell/
+│   └── privacy/index.html   # standalone page (no layout), linked from Google Play
 └── assets/
     ├── css/style.css
     └── js/main.js

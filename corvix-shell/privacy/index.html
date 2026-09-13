@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corvix Shell 개인정보처리방침 / Privacy Policy</title>
+<meta name="description" content="Corvix Shell (io.acusworks.corvix) Android SSH 클라이언트의 개인정보처리방침 / Privacy Policy">
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 44rem; margin: 3rem auto; padding: 0 1.25rem;
+         font-family: system-ui, -apple-system, "Apple SD Gothic Neo",
+                      "Noto Sans KR", sans-serif;
+         line-height: 1.8; color: #1a1a1a; background: #fff; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    a { color: #7ab7ff; }
+    code { background: #262a30 !important; }
+    hr { border-top-color: #33373d !important; }
+    .note { background: #1e2228 !important; border-left-color: #4a5058 !important; }
+    .lang-nav { border-bottom-color: #33373d !important; }
+  }
+  h1 { font-size: 1.55rem; line-height: 1.4; }
+  h2 { font-size: 1.1rem; margin-top: 2.25rem; }
+  p, li { font-size: 1rem; }
+  ul { padding-left: 1.3rem; }
+  hr { border: 0; border-top: 1px solid #e2e2e2; margin: 3.5rem 0; }
+  code { background: #f2f3f5; padding: 0.1em 0.4em; border-radius: 3px;
+         font-size: 0.9em; }
+  .meta { color: #666; font-size: 0.9rem; }
+  .note { background: #f6f7f9; border-left: 3px solid #c9ced6;
+          padding: 0.9rem 1.1rem; margin: 1.2rem 0; }
+  .lang-nav { font-size: 0.9rem; padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+              border-bottom: 1px solid #e2e2e2; }
+  .lang-nav a + a::before { content: " · "; color: #999; }
+  footer { margin-top: 4rem; font-size: 0.85rem; color: #888; }
+</style>
+</head>
+<body>
+
+<nav class="lang-nav" aria-label="Language">
+  <a href="#ko" lang="ko">한국어</a><a href="#en" lang="en">English</a>
+</nav>
+
+<h1 id="ko">Corvix Shell 개인정보처리방침</h1>
+<p class="meta"><strong>시행일:</strong> 2026년 9월 13일 · <strong>최종 수정일:</strong> 2026년 9월 13일</p>
+
+<p><strong>Corvix Shell</strong>(패키지명 <code>io.acusworks.corvix</code>, 이하 "본 앱")은
+안드로이드 기기에서 SSH 서버에 접속하기 위한 터미널 클라이언트입니다.
+본 방침은 본 앱이 정보를 어떻게 다루는지 설명합니다.</p>
+
+<h2>1. 개발자가 수집하는 정보</h2>
+<p><strong>없습니다.</strong> 본 앱은 개인정보를 포함한 어떠한 정보도 수집·전송하지 않으며,
+개발자가 운영하는 서버는 존재하지 않습니다. 개발자는 사용자의 접속 정보, 접속 대상 서버,
+터미널에서 오간 내용 중 어느 것에도 접근할 수 없습니다.</p>
+
+<h2>2. 기기 내부에 저장되는 정보</h2>
+<p>사용자가 직접 입력한 다음 정보가 기기 내부 저장소에만 보관됩니다.</p>
+<ul>
+  <li>호스트 주소, 포트, 사용자 이름</li>
+  <li>인증 정보 — 비밀번호, SSH 개인키, 키 암호구문</li>
+  <li>알려진 호스트 키(known hosts), 접속 이력 및 앱 설정</li>
+</ul>
+<p>인증 정보는 암호화된 형태로 저장되며, 외부로 전송되지 않습니다.
+이 정보는 사용자의 기기를 벗어나지 않습니다.</p>
+
+<h2>3. 네트워크 통신</h2>
+<p>본 앱의 네트워크 통신은 <strong>사용자가 직접 지정한 SSH 서버와의 직접 연결</strong>이
+전부입니다. 개발자의 서버나 제3자의 중계 서버를 경유하지 않으며,
+통신 내용은 SSH 프로토콜로 암호화됩니다.</p>
+<p>접속 대상 서버가 어떤 정보를 기록하는지는 해당 서버 운영자의 정책에 따르며,
+본 방침의 적용 범위 밖입니다.</p>
+
+<h2>4. 내보내기(Export) 기능</h2>
+<p>본 앱은 사용자가 저장한 접속 정보를 파일로 내보내는 기능을 제공합니다.
+이 기능은 <strong>사용자가 직접 실행할 때만</strong> 동작하며, 생성된 파일은
+사용자가 지정한 위치에 저장됩니다. 개발자는 이 파일에 접근할 수 없습니다.</p>
+<div class="note">
+  <strong>주의</strong> — 내보낸 파일에는 인증 정보가 포함될 수 있습니다.
+  파일의 보관·전달·삭제에 대한 책임은 사용자에게 있으므로,
+  안전한 위치에 보관하시고 불필요해지면 삭제하시기 바랍니다.
+</div>
+
+<h2>5. 온라인 동기화</h2>
+<p>본 앱은 클라우드 동기화, 계정 백업, 기기 간 동기화 기능을
+<strong>제공하지 않습니다.</strong> 저장된 정보는 해당 기기에만 존재합니다.</p>
+
+<h2>6. 제3자 제공 및 광고</h2>
+<p>본 앱은 광고 네트워크, 사용 분석 도구, 크래시 리포트 도구를 비롯한
+어떠한 제3자 SDK도 포함하지 않으며, 어떠한 정보도 제3자에게 제공하거나 판매하지 않습니다.</p>
+
+<h2>7. 앱이 사용하는 권한</h2>
+<ul>
+  <li><strong>인터넷</strong> — 사용자가 지정한 SSH 서버에 접속하기 위해 사용됩니다.</li>
+  <li><strong>파일 선택</strong> — 개인키 가져오기 및 접속 정보 내보내기 시,
+      사용자가 시스템 파일 선택 화면에서 직접 고른 파일에만 접근합니다.
+      기기 내 다른 파일에는 접근하지 않습니다.</li>
+</ul>
+
+<h2>8. 데이터 보관 및 삭제</h2>
+<p>본 앱이 저장한 모든 정보는 앱 내에서 개별 삭제할 수 있으며,
+앱을 삭제하면 함께 완전히 삭제됩니다. 개발자 측에 삭제를 요청할 대상 데이터는
+애초에 존재하지 않습니다.</p>
+
+<h2>9. 아동의 개인정보</h2>
+<p>본 앱은 개발자 및 시스템 관리자를 위한 도구이며, 모든 사용자로부터
+개인정보를 수집하지 않습니다.</p>
+
+<h2>10. 방침의 변경</h2>
+<p>본 방침이 변경될 경우 이 페이지에 변경된 내용과 시행일을 게시합니다.</p>
+
+<h2>11. 문의처</h2>
+<p><a href="mailto:MinGi.KYUNG@gmail.com">MinGi.KYUNG@gmail.com</a></p>
+
+<hr>
+
+<h1 id="en">Privacy Policy for Corvix Shell</h1>
+<p class="meta"><strong>Effective:</strong> September 13, 2026 · <strong>Last updated:</strong> September 13, 2026</p>
+
+<p><strong>Corvix Shell</strong> (package <code>io.acusworks.corvix</code>, the "App")
+is a terminal client for connecting to SSH servers from an Android device.
+This policy explains how the App handles information.</p>
+
+<h2>1. Information Collected by the Developer</h2>
+<p><strong>None.</strong> The App collects and transmits no information of any kind,
+and the developer operates no server. The developer has no access to your connection
+details, the servers you connect to, or anything exchanged in your terminal sessions.</p>
+
+<h2>2. Information Stored on Your Device</h2>
+<p>The following, entered by you, is stored solely within your device:</p>
+<ul>
+  <li>Host address, port, and username</li>
+  <li>Credentials — passwords, SSH private keys, and key passphrases</li>
+  <li>Known host keys, connection history, and app settings</li>
+</ul>
+<p>Credentials are stored in encrypted form and are never transmitted.
+This information does not leave your device.</p>
+
+<h2>3. Network Communication</h2>
+<p>The App's only network activity is a <strong>direct connection to the SSH server
+you specify</strong>. No developer server or third-party relay is involved, and the
+connection is encrypted by the SSH protocol.</p>
+<p>What a destination server logs is governed by that server operator's policy and
+falls outside the scope of this policy.</p>
+
+<h2>4. Export Feature</h2>
+<p>The App can export your saved connection entries to a file. This runs
+<strong>only when you initiate it</strong>, and the resulting file is written to a
+location you choose. The developer cannot access this file.</p>
+<div class="note">
+  <strong>Note</strong> — An exported file may contain credentials. Storing,
+  transferring, and deleting it is your responsibility; keep it somewhere safe and
+  delete it when it is no longer needed.
+</div>
+
+<h2>5. Online Synchronization</h2>
+<p>The App provides <strong>no</strong> cloud sync, account backup, or cross-device
+synchronization. Stored information exists only on the device where it was entered.</p>
+
+<h2>6. Third Parties and Advertising</h2>
+<p>The App contains no advertising networks, analytics tools, crash reporting tools,
+or any other third-party SDK, and shares or sells no information to anyone.</p>
+
+<h2>7. Permissions Used</h2>
+<ul>
+  <li><strong>Internet</strong> — used to reach the SSH server you specify.</li>
+  <li><strong>File selection</strong> — when importing a private key or exporting
+      connection entries, the App accesses only the file you pick in the system
+      file picker. It does not access other files on your device.</li>
+</ul>
+
+<h2>8. Retention and Deletion</h2>
+<p>Anything the App stores can be deleted individually within the App, and is removed
+entirely when the App is uninstalled. There is no developer-held data to request
+deletion of.</p>
+
+<h2>9. Children's Privacy</h2>
+<p>The App is a tool for developers and system administrators and collects no personal
+information from any user.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>Any changes will be posted on this page together with their effective date.</p>
+
+<h2>11. Contact</h2>
+<p><a href="mailto:MinGi.KYUNG@gmail.com">MinGi.KYUNG@gmail.com</a></p>
+
+<footer>
+  <a href="/contents/app/corvix-shell-ko/">Corvix Shell 소개</a> ·
+  <a href="/contents/app/corvix-shell/">About Corvix Shell</a> ·
+  <a href="/">currensadastra.github.io</a>
+</footer>
+
+</body>
+</html>
