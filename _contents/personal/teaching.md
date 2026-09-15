@@ -7,6 +7,17 @@ translation_key: teaching
 
 # Teaching
 
+## Fall 2026 Courses
+
+| University | Course | Course Content |
+|---|---|---|
+| Konkuk University, College of International Studies, Department of Computer Software | Basic Programming using Python | Programming fundamentals using Python |
+| Korea University of Technology and Education (KOREATECH) | Systems Programming (Capstone Design) | Systems programming and project design and implementation. Detailed content to be confirmed from the syllabus |
+| Kangwon National University, Gangneung Campus, Department of FinTech | Computer Coding | Python-based coding instruction |
+| Dongguk University | Database Systems | Database theory and applications. Detailed content to be confirmed from the syllabus |
+
+---
+
 My teaching philosophy emphasizes connecting **theoretical computer science concepts with practical system implementation**.  
 Students learn best when they not only understand abstract ideas but also experience how those ideas behave in real systems.
 
