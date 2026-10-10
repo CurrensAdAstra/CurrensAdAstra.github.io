@@ -188,14 +188,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 테마 토글
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+  // Apply a named palette and remember the visitor's selection.
+  const themeSelect = document.getElementById('theme-select');
+  if (themeSelect) {
+    themeSelect.value = document.documentElement.getAttribute('data-theme') || 'nord';
+    themeSelect.addEventListener('change', function () {
+      const theme = themeSelect.value;
+      document.documentElement.setAttribute('data-theme', theme);
+      try {
+        localStorage.setItem('site-theme', theme);
+      } catch (error) {
+        // Theme selection still works when browser storage is disabled.
+      }
     });
   }
 

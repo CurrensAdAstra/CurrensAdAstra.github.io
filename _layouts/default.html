@@ -9,7 +9,7 @@
 {% else %}
 {% assign translation_candidates = site.pages | where: "translation_key", translation_key %}
 {% endif %}
-<html lang="{{ current_lang }}">
+<html lang="{{ current_lang }}" data-theme="nord">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,16 @@
     <title>{{ page.title }}</title>
     <script>
         (function() {
-            var theme = localStorage.getItem('theme') || 'dark';
+            var theme = 'nord';
+            try {
+                // The old dark/light toggle must not override the new default.
+                var savedTheme = localStorage.getItem('site-theme');
+                if (['nord', 'frappe', 'latte', 'dark'].indexOf(savedTheme) !== -1) {
+                    theme = savedTheme;
+                }
+            } catch (error) {
+                // Nord remains available when browser storage is disabled.
+            }
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
@@ -53,18 +62,29 @@
             <!-- Top Header -->
             <div class="panel-header panel-header-top">
                 <div class="panel-title">{{ page.title }}</div>
-                <div class="language-switcher" aria-label="{{ labels.language }}">
-                    <span class="language-label">{{ labels.language }}:</span>
-                    {% for lang in site.i18n.languages %}
-                        {% assign translated_page = translation_candidates | where: "lang", lang | first %}
-                        {% if lang == current_lang %}
-                            <strong class="language-current">{{ lang }}</strong>
-                        {% elsif translated_page %}
-                            <a class="language-link" href="{{ site.baseurl }}{{ translated_page.url }}">{{ lang }}</a>
-                        {% else %}
-                            <span class="language-disabled">{{ lang }}</span>
-                        {% endif %}
-                    {% endfor %}
+                <div class="panel-tools">
+                    <label class="theme-picker" for="theme-select">
+                        <span class="theme-label">{{ labels.theme }}:</span>
+                        <select class="theme-select" id="theme-select" name="theme" aria-label="{{ labels.theme }}">
+                            <option value="nord" selected>Nord</option>
+                            <option value="frappe">Frappé</option>
+                            <option value="latte">Latte</option>
+                            <option value="dark">{{ labels.theme_classic_dark }}</option>
+                        </select>
+                    </label>
+                    <div class="language-switcher" aria-label="{{ labels.language }}">
+                        <span class="language-label">{{ labels.language }}:</span>
+                        {% for lang in site.i18n.languages %}
+                            {% assign translated_page = translation_candidates | where: "lang", lang | first %}
+                            {% if lang == current_lang %}
+                                <strong class="language-current">{{ lang }}</strong>
+                            {% elsif translated_page %}
+                                <a class="language-link" href="{{ site.baseurl }}{{ translated_page.url }}">{{ lang }}</a>
+                            {% else %}
+                                <span class="language-disabled">{{ lang }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
 
