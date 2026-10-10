@@ -7,17 +7,6 @@ translation_key: teaching
 
 # Teaching
 
-## 2026학년도 2학기 강의
-
-| 대학 | 과목 | 강의 내용 |
-|---|---|---|
-| 건국대학교 국제대학 컴퓨터소프트웨어학과 | Basic Programming using Python | 파이썬을 활용한 기초 프로그래밍 |
-| 한국기술교육대학교 | 시스템프로그래밍(캡스톤디자인) | 시스템프로그래밍과 프로젝트 설계·구현 중심. 세부 내용은 강의계획서 확인 필요 |
-| 강원대학교 강릉캠퍼스 핀테크학과 | 컴퓨터코딩 | 파이썬 기반 코딩 교육 |
-| 동국대학교 | 데이터베이스체제 | 데이터베이스 이론과 활용. 세부 내용은 강의계획서 확인 필요 |
-
----
-
 제 강의 철학은 **이론적 컴퓨터공학 개념과 실제 시스템 구현의 연결**에 있습니다.  
 학생은 추상 개념을 이해하는 것뿐 아니라, 실제 시스템에서 그 개념이 어떻게 동작하는지 체험할 때 가장 잘 학습합니다.
 
@@ -82,8 +71,18 @@ translation_key: teaching
 대한민국 여러 대학에서 강의했습니다.
 
 ### Konkuk University
+- Basic Programming using Python, 국제대학 컴퓨터소프트웨어학과 (2026학년도 2학기): 파이썬을 활용한 기초 프로그래밍
 - Introduction to Computer Engineering, 영어 강의 (2026.03 – 현재)
 - 창의적공학설계입문 (2016)
+
+### Korea University of Technology and Education (KOREATECH)
+- 시스템프로그래밍(캡스톤디자인) (2026학년도 2학기): 시스템프로그래밍과 프로젝트 설계·구현 중심. 세부 내용은 강의계획서 확인 필요
+
+### Kangwon National University
+- 컴퓨터코딩, 강릉캠퍼스 핀테크학과 (2026학년도 2학기): 파이썬 기반 코딩 교육
+
+### Dongguk University
+- 데이터베이스체제 (2026학년도 2학기): 데이터베이스 이론과 활용. 세부 내용은 강의계획서 확인 필요
 
 ### Kookmin University
 - Object-Oriented Programming

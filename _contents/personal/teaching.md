@@ -7,17 +7,6 @@ translation_key: teaching
 
 # Teaching
 
-## Fall 2026 Courses
-
-| University | Course | Course Content |
-|---|---|---|
-| Konkuk University, College of International Studies, Department of Computer Software | Basic Programming using Python | Programming fundamentals using Python |
-| Korea University of Technology and Education (KOREATECH) | Systems Programming (Capstone Design) | Systems programming and project design and implementation. Detailed content to be confirmed from the syllabus |
-| Kangwon National University, Gangneung Campus, Department of FinTech | Computer Coding | Python-based coding instruction |
-| Dongguk University | Database Systems | Database theory and applications. Detailed content to be confirmed from the syllabus |
-
----
-
 My teaching philosophy emphasizes connecting **theoretical computer science concepts with practical system implementation**.  
 Students learn best when they not only understand abstract ideas but also experience how those ideas behave in real systems.
 
@@ -87,8 +76,18 @@ This approach allows students to develop both **conceptual understanding and eng
 I have taught courses at several universities in Korea.
 
 ### Konkuk University
+- Basic Programming using Python, College of International Studies, Department of Computer Software (Fall 2026): Programming fundamentals using Python
 - Introduction to Computer Engineering, taught in English (March 2026 – Present)
 - Introduction to Creative Engineering Design (2016)
+
+### Korea University of Technology and Education (KOREATECH)
+- Systems Programming (Capstone Design) (Fall 2026): Systems programming and project design and implementation. Detailed content to be confirmed from the syllabus
+
+### Kangwon National University
+- Computer Coding, Gangneung Campus, Department of FinTech (Fall 2026): Python-based coding instruction
+
+### Dongguk University
+- Database Systems (Fall 2026): Database theory and applications. Detailed content to be confirmed from the syllabus
 
 ### Kookmin University
 - Object-Oriented Programming
